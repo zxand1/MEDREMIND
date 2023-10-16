@@ -1,16 +1,19 @@
-import {useState} from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Text,
   View,
   ImageBackground,
   TouchableOpacity,
   TextInput,
+  Image,
+  Animated,
+  Easing,
 } from "react-native";
-import {SafeAreaView} from "react-native-safe-area-context";
-import {LinearGradient} from "expo-linear-gradient";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
 
 import styles from "./styles";
-import {StatusBar} from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 
 export default function AuthPage() {
   const [formData, setFormData] = useState({
@@ -30,7 +33,7 @@ export default function AuthPage() {
 
     if (Object.values(formError).some((err) => !!err)) {
       console.log(formError);
-      setFormError({...formError});
+      setFormError({ ...formError });
       return;
     }
 
@@ -45,7 +48,11 @@ export default function AuthPage() {
     >
       <StatusBar style="light" />
       <SafeAreaView style={styles.container}>
-        <View style={styles.logo}>
+        <Image
+          source={require('../../assets/images/logo.png')}
+          style={styles.logoImage}
+        />
+        <View style={styles.logoTitle}>
           <Text style={styles.logoText}>Med</Text>
           <Text style={styles.logoText}>Remind</Text>
         </View>
@@ -58,8 +65,8 @@ export default function AuthPage() {
             ]}
             value={formData.username}
             onChangeText={(username) => {
-              setFormData((formData) => ({...formData, username}));
-              setFormError({username: "", password: ""});
+              setFormData((formData) => ({ ...formData, username }));
+              setFormError({ username: "", password: "" });
             }}
             placeholder="Usuário"
             autoCapitalize="none"
@@ -75,8 +82,8 @@ export default function AuthPage() {
             ]}
             value={formData.password}
             onChangeText={(password) => {
-              setFormData((formData) => ({...formData, password}));
-              setFormError({username: "", password: ""});
+              setFormData((formData) => ({ ...formData, password }));
+              setFormError({ username: "", password: "" });
             }}
             placeholder="Senha"
             secureTextEntry
@@ -89,12 +96,18 @@ export default function AuthPage() {
           <TouchableOpacity style={styles.submitBtn} onPress={handleSubmit}>
             <LinearGradient
               colors={["#110e9d", "#2e84c1"]}
-              start={{x: 0, y: 0}}
-              end={{x: 1, y: 1}}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
               style={styles.submitBtnBackground}
             >
               <Text style={styles.submitBtnText}>Login</Text>
             </LinearGradient>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.title}>
+            <Text style={styles.botaoSenha}>Esqueceu a senha?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.title}>
+            <Text style={styles.botaoCadastrar}>Ainda não é cadastrado? Cadastre-se!</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
