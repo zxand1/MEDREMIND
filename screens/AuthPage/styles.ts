@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent:"center",
-        width: 350,
-        height: 350
+        width: 370,
+        height: 370,
     },
     logoText: {
         fontSize: 45,
@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         lineHeight: 20,
         color: "white",
-        marginBottom: 5,
-        marginTop: 15,
     },
     form: {
         backgroundColor: "#ffffff21",
@@ -52,18 +50,19 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         borderRadius: 18,
         marginTop: 15,
+        color: 'white'
     },
     formInputError: {
         borderWidth: 2,
         borderColor: "#ff375b",
     },
     errorMsg: {
-        color: "#ff375b"
+        color: "#ff375b",
     },
     submitBtn: {
         borderRadius: 18,
         marginTop: 30,
-        marginBottom: 20,
+        marginBottom: 15,
     },
     submitBtnBackground: {
         paddingHorizontal: 15,
@@ -76,15 +75,21 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         fontSize: 20,
     },
-    botaoSenha: {
-        fontSize: 15,
+    btnSenha: {
         lineHeight: 20,
         color: "white", 
     },
-    botaoCadastrar: {
-        fontSize: 15,
+    btnCadastrar: {
         lineHeight: 20,
-        color: "white", 
+        color: "white",
+    },
+    btnEsqueci:{ 
+        width: 125,
+        height: 20,
+    },
+    btnCadastro:{
+        width: 240,
+        height: 20,
     }
 });
 

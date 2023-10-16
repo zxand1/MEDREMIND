@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   Text,
   View,
@@ -6,11 +6,10 @@ import {
   TouchableOpacity,
   TextInput,
   Image,
-  Animated,
-  Easing,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
+import * as Animatable from 'react-native-animatable'
 
 import styles from "./styles";
 import { StatusBar } from "expo-status-bar";
@@ -40,6 +39,14 @@ export default function AuthPage() {
     console.log(formData);
     alert("Login realizado!");
   }
+  const customAnimation = {
+    0: {
+      scaleX: 1,
+    },
+    1: {
+      scaleX: -0.9, 
+     }
+  };
 
   return (
     <ImageBackground
@@ -48,9 +55,12 @@ export default function AuthPage() {
     >
       <StatusBar style="light" />
       <SafeAreaView style={styles.container}>
-        <Image
+        <Animatable.Image
           source={require('../../assets/images/logo.png')}
           style={styles.logoImage}
+          animation={customAnimation}
+          iterationCount="infinite"
+          duration={2000} 
         />
         <View style={styles.logoTitle}>
           <Text style={styles.logoText}>Med</Text>
@@ -103,11 +113,12 @@ export default function AuthPage() {
               <Text style={styles.submitBtnText}>Login</Text>
             </LinearGradient>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.title}>
-            <Text style={styles.botaoSenha}>Esqueceu a senha?</Text>
+          <TouchableOpacity style={styles.btnEsqueci}>
+            <Text style={styles.btnSenha}>Esqueceu a senha?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.title}>
-            <Text style={styles.botaoCadastrar}>Ainda não é cadastrado? Cadastre-se!</Text>
+          <TouchableOpacity style={styles.btnCadastro}
+          >
+            <Text style={styles.btnCadastrar}>Ainda não é cadastrado? Cadastre-se!</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
