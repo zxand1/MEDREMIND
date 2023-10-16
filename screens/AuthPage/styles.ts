@@ -7,14 +7,21 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         paddingHorizontal: 30,
-        paddingVertical: 20,
+        paddingVertical: 40,
     },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
     },
-    logo: {
-        marginBottom: 50,
+    logoTitle: {
+        marginBottom: 40,
+    },
+    logoImage:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent:"center",
+        width: 350,
+        height: 350
     },
     logoText: {
         fontSize: 45,
@@ -27,22 +34,24 @@ const styles = StyleSheet.create({
         fontSize: 20,
         lineHeight: 20,
         color: "white",
-        marginBottom: 10,
+        marginBottom: 5,
+        marginTop: 15,
     },
     form: {
-        backgroundColor: "#ffffff55",
-        padding: 30,
+        backgroundColor: "#ffffff21",
+        padding: 20,
         borderRadius: 18,
         maxWidth: 720,
+        marginVertical: 35,
     },
     formInput: {
         textAlign: "center",
-        backgroundColor: "white",
+        backgroundColor: "#ffffff55",
         fontSize: 18,
         paddingHorizontal: 15,
-        paddingVertical: 10,
+        paddingVertical: 8,
         borderRadius: 18,
-        marginTop: 10,
+        marginTop: 15,
     },
     formInputError: {
         borderWidth: 2,
@@ -54,6 +63,7 @@ const styles = StyleSheet.create({
     submitBtn: {
         borderRadius: 18,
         marginTop: 30,
+        marginBottom: 20,
     },
     submitBtnBackground: {
         paddingHorizontal: 15,
@@ -66,6 +76,16 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         fontSize: 20,
     },
+    botaoSenha: {
+        fontSize: 15,
+        lineHeight: 20,
+        color: "white", 
+    },
+    botaoCadastrar: {
+        fontSize: 15,
+        lineHeight: 20,
+        color: "white", 
+    }
 });
 
 export default styles;
