@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         justifyContent: "center",
-        paddingHorizontal: 30,
+        paddingHorizontal: 20,
         paddingVertical: 40,
     },
     imageBackground: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
     },
     logoTitle: {
-        marginBottom: 40,
+        marginBottom: 20,
     },
     logoImage:{
         flex: 1,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         color: "white",
     },
     form: {
-        backgroundColor: "#ffffff21",
+
         padding: 20,
         borderRadius: 18,
         maxWidth: 720,

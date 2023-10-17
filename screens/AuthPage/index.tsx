@@ -1,20 +1,16 @@
 import { useState } from "react";
-import {
-  Text,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-  TextInput,
-  Image,
-} from "react-native";
+import { Text, View, ImageBackground, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
+//import { useNavigation } from '@react-navigation/native';
 
 import styles from "./styles";
 import { StatusBar } from "expo-status-bar";
 
 export default function AuthPage() {
+  
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -39,14 +35,6 @@ export default function AuthPage() {
     console.log(formData);
     alert("Login realizado!");
   }
-  const customAnimation = {
-    0: {
-      scaleX: 1,
-    },
-    1: {
-      scaleX: -0.9, 
-     }
-  };
 
   return (
     <ImageBackground
@@ -58,16 +46,17 @@ export default function AuthPage() {
         <Animatable.Image
           source={require('../../assets/images/logo.png')}
           style={styles.logoImage}
-          animation={customAnimation}
+          animation="rotate"
           iterationCount="infinite"
-          duration={2000} 
+          duration={3500}
+          direction="alternate-reverse"
         />
         <View style={styles.logoTitle}>
           <Text style={styles.logoText}>Med</Text>
           <Text style={styles.logoText}>Remind</Text>
         </View>
         <View style={styles.form}>
-          <Text style={styles.title}>Seja bem-vindo(a)!</Text>
+          <Text style={styles.title}>Seja bem-vindo(a):</Text>
           <TextInput
             style={[
               styles.formInput,
