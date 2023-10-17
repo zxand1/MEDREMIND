@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 //import { useNavigation } from '@react-navigation/native';
 
-import styles from "../Register/styles";
+import styles from "./styles";
 import { StatusBar } from "expo-status-bar";
 
 export default function Register() {
@@ -52,7 +52,7 @@ export default function Register() {
           style={styles.logoImage}
           animation="rotate"
           iterationCount="infinite"
-          duration={3500}
+          duration={3800}
           direction="alternate-reverse"
         />
         <View style={styles.logoTitle}>

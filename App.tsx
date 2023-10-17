@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 import AuthPage from './screens/AuthPage';
-import Register from './screens/Register';
+import RegisterPage from './screens/RegisterPage';
 
 export default function App() {
-  const [register, setRegister] = useState(true);
+  const [register, setRegisterPage] = useState(true);
 
   return (
     <>
       <StatusBar style="auto" />
-      {register ? <Register /> : <AuthPage />}
+      {register ? <RegisterPage /> : <AuthPage />}
     </>
   );
 }
