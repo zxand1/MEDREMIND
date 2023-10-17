@@ -5,7 +5,7 @@ import AuthPage from './screens/AuthPage';
 import RegisterPage from './screens/RegisterPage';
 
 export default function App() {
-  const [register, setRegisterPage] = useState(true);
+  const [register, setRegisterPage] = useState(false);
 
   return (
     <>
