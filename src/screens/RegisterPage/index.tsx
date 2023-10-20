@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Text, View, ImageBackground, TouchableOpacity, TextInput } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
-//import { useNavigation } from '@react-navigation/native';
+
 
 import styles from "./styles";
-import { StatusBar } from "expo-status-bar";
 
-export default function Register() {
+export default function RegisterPage() {
 
   const [formData, setFormData] = useState({
     username: "",
@@ -42,13 +43,13 @@ export default function Register() {
 
   return (
     <ImageBackground
-      source={require("../../assets/images/wallpaper.png")}
+      source={require("C:/ProjetoIntegrador/MEDREMIND/assets/images/wallpaper.png")}
       style={styles.imageBackground}
     >
       <StatusBar style="light" />
       <SafeAreaView style={styles.container}>
         <Animatable.Image
-          source={require('../../assets/images/logo.png')}
+          source={require("C:/ProjetoIntegrador/MEDREMIND/assets/images/logo.png")}
           style={styles.logoImage}
           animation="rotate"
           iterationCount="infinite"

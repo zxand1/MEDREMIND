@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-import AuthPage from './screens/AuthPage';
-import RegisterPage from './screens/RegisterPage';
+import AuthPage from './src/screens/AuthPage';
+import RegisterPage from './src/screens/RegisterPage';
+import React from "react";
 
 export default function App() {
   const [register, setRegisterPage] = useState(false);

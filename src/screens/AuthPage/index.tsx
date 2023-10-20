@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Text, View, ImageBackground, TouchableOpacity, TextInput } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import * as Animatable from 'react-native-animatable'
-//import { useNavigation } from '@react-navigation/native';
+import * as Animatable from "react-native-animatable";
 
 import styles from "./styles";
-import { StatusBar } from "expo-status-bar";
 
 export default function AuthPage() {
-  
+
 
   const [formData, setFormData] = useState({
     username: "",
@@ -21,10 +21,10 @@ export default function AuthPage() {
     password: "",
   });
 
+
   function handleSubmit() {
     formError.username = !formData.username ? "Informe o seu usuário" : "";
-    formError.password =
-      formData.password.length < 8 ? "Informe a sua senha" : "";
+    formError.password = formData.password.length < 8 ? "Informe a sua senha" : "";
 
     if (Object.values(formError).some((err) => !!err)) {
       console.log(formError);
@@ -38,13 +38,13 @@ export default function AuthPage() {
 
   return (
     <ImageBackground
-      source={require("../../assets/images/wallpaper.png")}
+      source={require("../../../assets/images/wallpaper.png")}
       style={styles.imageBackground}
     >
       <StatusBar style="light" />
       <SafeAreaView style={styles.container}>
         <Animatable.Image
-          source={require('../../assets/images/logo.png')}
+          source={require("../../../assets/images/logo.png")}
           style={styles.logoImage}
           animation="rotate"
           iterationCount="infinite"
