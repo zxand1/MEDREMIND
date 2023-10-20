@@ -6,7 +6,7 @@ import RegisterPage from './src/screens/RegisterPage';
 import React from "react";
 
 export default function App() {
-  const [register, setRegisterPage] = useState(false);
+  const [register] = useState(false);
 
   return (
     <>
