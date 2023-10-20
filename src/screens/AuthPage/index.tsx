@@ -5,12 +5,11 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
-
 import styles from "./styles";
 
+import {useNavigation} from '@react-navigation/native';
+
 export default function AuthPage() {
-
-
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -21,6 +20,14 @@ export default function AuthPage() {
     password: "",
   });
 
+  const navigation = useNavigation();
+  
+  function openRegister() {
+    navigation.navigate('RegisterPage');
+  }
+  function openReset() {
+    navigation.navigate('ResetPage');
+  }
 
   function handleSubmit() {
     formError.username = !formData.username ? "Informe o seu usuário" : "";
@@ -35,6 +42,7 @@ export default function AuthPage() {
     console.log(formData);
     alert("Login realizado!");
   }
+
 
   return (
     <ImageBackground
@@ -102,11 +110,10 @@ export default function AuthPage() {
               <Text style={styles.submitBtnText}>Login</Text>
             </LinearGradient>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnEsqueci}>
+          <TouchableOpacity style={styles.btnEsqueci} onPress={openReset}>
             <Text style={styles.btnSenha}>Esqueceu a senha?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btnCadastro}
-          >
+          <TouchableOpacity style={styles.btnCadastro} onPress={openRegister}>
             <Text style={styles.btnCadastrar}>Ainda não é cadastrado? Cadastre-se!</Text>
           </TouchableOpacity>
         </View>
