@@ -10,7 +10,7 @@ export default function StackRoutes(){
     return(
             <Navigator
                 screenOptions={{
-                    headerShown: false,
+                    headerShown: true,
                 }}
             >
                 <Screen 

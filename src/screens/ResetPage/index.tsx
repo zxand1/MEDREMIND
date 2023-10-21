@@ -34,13 +34,13 @@ export default function ResetPage() {
 
   return (
     <ImageBackground
-      source={require("C:/ProjetoIntegrador/MEDREMIND/assets/images/wallpaper.png")}
+      source={require("../../../assets/images/wallpaper.png")}
       style={styles.imageBackground}
     >
       <StatusBar style="light" />
       <SafeAreaView style={styles.container}>
         <Animatable.Image
-          source={require("C:/ProjetoIntegrador/MEDREMIND/assets/images/logo.png")}
+          source={require("../../../assets/images/logo.png")}
           style={styles.logoImage}
           animation="rotate"
           iterationCount="infinite"
