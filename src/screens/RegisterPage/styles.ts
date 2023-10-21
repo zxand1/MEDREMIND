@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         lineHeight: 20,
         color: "white",
+        fontWeight: "600",
     },
     form: {
         backgroundColor: "#ffffff21",

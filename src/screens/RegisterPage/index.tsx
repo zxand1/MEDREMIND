@@ -38,7 +38,7 @@ export default function RegisterPage() {
     }
 
     console.log(formData);
-    alert("Login realizado!");
+    alert("Cadastro Realizado!");
   }
 
   return (

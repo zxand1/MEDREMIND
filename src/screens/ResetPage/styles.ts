@@ -6,15 +6,13 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         justifyContent: "center",
-        paddingHorizontal: 20,
-        paddingVertical: 40,
     },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
     },
     logoTitle: {
-        marginBottom: 20,
+        marginBottom: 160,
     },
     logoImage:{
         flex: 1,
@@ -33,19 +31,18 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         lineHeight: 20,
-        color: "white",
+        color: "black",
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "#ffffff21",
+        backgroundColor: "white",
         padding: 20,
         borderRadius: 18,
-        maxWidth: 720,
-        marginVertical: 35,
+        height: "35%",
     },
     formInput: {
         textAlign: "center",
-        backgroundColor: "#ffffff55",
+        backgroundColor: "#E6E6FA",
         fontSize: 18,
         paddingHorizontal: 15,
         paddingVertical: 8,
