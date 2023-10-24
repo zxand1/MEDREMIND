@@ -5,13 +5,21 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "column",
-        justifyContent: "center",
-        paddingHorizontal: 20,
-        paddingVertical: 80,
+        justifyContent: "flex-start",
+        paddingHorizontal: 10,
+        paddingVertical: 60,
     },
     imageBackground: {
         flex: 1,
         resizeMode: "cover",
+    },
+    imageMedical: {
+        height:'0%',
+        width:'50%',
+        right: 100,
+        top:20,
+        position:'absolute'
+        
     },
     logoTitle: {
         marginBottom: 1,
@@ -39,31 +47,43 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffffff21",
         padding: 20,
         borderRadius: 18,
-        maxWidth: 700,
-        marginVertical: 15,
+        maxWidth: 'auto',
+        marginVertical: 25,
+        
     },
  
     submitBtn: {
         borderRadius: 18,
-        marginTop: 30,
+        marginTop: 20,
         marginBottom: 12,
+        
     },
     submitBtnBackground: {
-        paddingHorizontal: 15,
-        paddingVertical: 10,
-        borderRadius: 18,
+        paddingHorizontal: 5,
+        paddingVertical: 20,
+        borderRadius:50,
     },
-    submitBtnText: {
+    submitText: {
         color: "white",
         textAlign: "center",
         fontWeight: "600",
         fontSize: 20,
+        position:'relative'
     },
-    btnSenha: {
-        lineHeight: 20,
-        color: "white", 
+    submitText2: {
+        color: "white",
+        textAlign: "center",
+        fontWeight: "600",
+        fontSize: 15,
+        position:'relative'
     },
-
+    icon:{
+        textAlign:'center',
+        justifyContent:'center',
+        position:'absolute',
+        padding:8
+    }
+        
 });
 
 export default styles;

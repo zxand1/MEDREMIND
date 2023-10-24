@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Image } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 import styles from "./styles";
 import { FaRocket } from 'react-icons/fa';
-
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function Program() {
 
@@ -33,9 +33,9 @@ export default function Program() {
           </View>
           <View style={styles.form}>
           <ScrollView>
-            <Text style={styles.title}>Programados:</Text>
+            <Text style={styles.title}>Medicamentos Programados:</Text>
 
-          <TouchableOpacity style={styles.submitBtn}>
+          <View style={styles.submitBtn}>
           
             <LinearGradient
               colors={["#110e9d", "#2e84c1"]}
@@ -43,79 +43,17 @@ export default function Program() {
               end={{ x: 1, y: 1 }}
               style={styles.submitBtnBackground}
             >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
+                <Image
+        style={styles.imageMedical}
+        source={require('../../../assets/images/medicamento.png')}
+        
+      />        
+              <Text style={styles.submitText}>Dipirona</Text>
+              <Text style={styles.submitText2}>Em 3 horas(10:00)</Text>
             </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.submitBtn}>
-            <LinearGradient
-              colors={["#110e9d", "#2e84c1"]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.submitBtnBackground}
-            >
-              <Text style={styles.submitBtnText}>Dipirona</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+            
+          </View>
+          
 
           </ScrollView>
         </View>

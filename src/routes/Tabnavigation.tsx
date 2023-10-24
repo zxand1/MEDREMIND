@@ -2,10 +2,12 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import Program from '../screens/Program';
-
-
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons'; 
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 const Tab = createBottomTabNavigator();
 
 export default function Tabnavigation() {
@@ -23,9 +25,9 @@ export default function Tabnavigation() {
             title:'',
             headerTransparent: true,
             headerShown:false,
-          tabBarLabel: 'Programados',
+          tabBarLabel: 'Cadastrados',
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="home" size={24} color={color} />
+            <FontAwesome5 name="pills" size={size} color={color} />
           ),
         }}
       />
@@ -36,25 +38,25 @@ export default function Tabnavigation() {
             title:'',
             headerTransparent: true,
             headerShown:false,
-          tabBarLabel: 'Inicio',
+          tabBarLabel: 'Programados',
           tabBarIcon: ({ color, size }) => (
-            <AntDesign name="home" size={24} color={color} />
+            <Ionicons name="alarm-sharp" size={size} color={color} />
           ),
         }}
-      />
-        <Tab.Screen
+      />  
+       <Tab.Screen
         name="Relatorio"
         component={Program}
         options={{
             title:'',
             headerTransparent: true,
             headerShown:false,            
-            tabBarLabel: 'Buscar',
+            tabBarLabel: 'Novo Registro',
             tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account-search" color={color} size={size} />
+              <Ionicons name="ios-add-circle-outline" size={size} color={color}/>
           ),
         }}
-      />      
+      />       
       <Tab.Screen
         name="sair"
         component={Program}
@@ -62,12 +64,28 @@ export default function Tabnavigation() {
             title:'',
             headerTransparent: true,
             headerShown:false,
-            tabBarLabel: 'Buscar',
+            tabBarLabel: 'Histórico',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account-search" color={color} size={size} />
+            <FontAwesome5 name="file-medical" size={size} color={color} />
+            
           ),
         }}
+        
       />  
+       <Tab.Screen
+        name="Configuracao"
+        component={Program}
+        options={{
+            title:'',
+            headerTransparent: true,
+            headerShown:false,            
+            tabBarLabel: 'Configurações',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialIcons name="settings" size={size} color={color} />
+          ),
+        }}
+      /> 
+      
     </Tab.Navigator>
   );
 }
