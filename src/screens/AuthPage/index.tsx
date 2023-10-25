@@ -28,6 +28,9 @@ export default function AuthPage() {
   function openReset() {
     navigation.navigate('ResetPage');
   }
+  function openTabnavigation() {
+    navigation.navigate('Tabnavigation');
+  }
 
   function handleSubmit() {
     formError.username = !formData.username ? "Informe o seu usuário" : "";
@@ -115,6 +118,9 @@ export default function AuthPage() {
           </TouchableOpacity>
           <TouchableOpacity style={styles.btnCadastro} onPress={openRegister}>
             <Text style={styles.btnCadastrar}>Ainda não é cadastrado? Cadastre-se!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btnCadastro} onPress={openTabnavigation}>
+            <Text style={styles.btnCadastrar}>Página programados</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

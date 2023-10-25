@@ -4,6 +4,8 @@ export declare global{
             AuthPage: undefined;
             RegisterPage: undefined;
             ResetPage: undefined;
+            Program:undefined;
+            Tabnavigation:undefined;
         }
     }
 }
