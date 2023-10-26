@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         width:'50%',
         right: 100,
         top:20,
-        position:'absolute'
+        position:'absolute',
         
     },
     logoTitle: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     logoImage:{
         left:90,
         top:-345,
-        position:'absolute'
+        position:'absolute',
     },
     logoText: {
         fontSize: 35,
@@ -40,15 +40,16 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         lineHeight: 20,
-        color: "white",
+        color: "black",
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "#ffffff21",
+        backgroundColor: "#ffffff",
         padding: 20,
-        borderRadius: 18,
+        borderRadius: 20,
         maxWidth: 'auto',
         marginVertical: 25,
+        height: 550,
         
     },
  
@@ -59,29 +60,30 @@ const styles = StyleSheet.create({
         
     },
     submitBtnBackground: {
-        paddingHorizontal: 5,
-        paddingVertical: 20,
-        borderRadius:50,
+        width: 325,
+        height : 60,
+        borderRadius:25,
+        padding: 5,
     },
     submitText: {
         color: "white",
         textAlign: "center",
         fontWeight: "600",
         fontSize: 20,
-        position:'relative'
+        position:'relative',
     },
     submitText2: {
         color: "white",
         textAlign: "center",
         fontWeight: "600",
         fontSize: 15,
-        position:'relative'
+        position:'relative',
     },
     icon:{
         textAlign:'center',
         justifyContent:'center',
         position:'absolute',
-        padding:8
+        padding: 8,
     }
         
 });
