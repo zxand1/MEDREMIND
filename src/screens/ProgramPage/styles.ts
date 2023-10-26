@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         justifyContent: "flex-start",
-        paddingHorizontal: 10,
+        paddingHorizontal: 12,
         paddingVertical: 60,
     },
     imageBackground: {

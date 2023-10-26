@@ -8,7 +8,7 @@ import styles from "./styles";
 import { FaRocket } from 'react-icons/fa';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function Program() {
+export default function ProgramPage() {
 
     return(
         <ImageBackground

@@ -4,7 +4,7 @@ export declare global{
             AuthPage: undefined;
             RegisterPage: undefined;
             ResetPage: undefined;
-            Program:undefined;
+            ProgramPage:undefined;
             Tabnavigation:undefined;
         }
     }

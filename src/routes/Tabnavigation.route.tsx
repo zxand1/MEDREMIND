@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import Program from '../screens/Program';
+import ProgramPage from '../screens/ProgramPage';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -14,13 +14,13 @@ export default function Tabnavigation() {
   return (
     <Tab.Navigator
         
-      initialRouteName="Program"
+      initialRouteName="ProgramPage"
       screenOptions={{
       }}
     >
             <Tab.Screen
         name="Programados"
-        component={Program}
+        component={ProgramPage}
         options={{
             title:'',
             headerTransparent: true,
@@ -33,7 +33,7 @@ export default function Tabnavigation() {
       />
              <Tab.Screen
         name="Programar"
-        component={Program}
+        component={ProgramPage}
         options={{
             title:'',
             headerTransparent: true,
@@ -46,7 +46,7 @@ export default function Tabnavigation() {
       />  
        <Tab.Screen
         name="Relatorio"
-        component={Program}
+        component={ProgramPage}
         options={{
             title:'',
             headerTransparent: true,
@@ -59,7 +59,7 @@ export default function Tabnavigation() {
       />       
       <Tab.Screen
         name="sair"
-        component={Program}
+        component={ProgramPage}
         options={{
             title:'',
             headerTransparent: true,
@@ -74,7 +74,7 @@ export default function Tabnavigation() {
       />  
        <Tab.Screen
         name="Configuracao"
-        component={Program}
+        component={ProgramPage}
         options={{
             title:'',
             headerTransparent: true,
