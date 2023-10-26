@@ -40,15 +40,16 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         lineHeight: 20,
-        color: "white",
+        color: "#000000",
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "#ffffff21",
-        padding: 20,
+        backgroundColor: "#E6E6FA",
+        padding: 15,
         borderRadius: 18,
         maxWidth: 'auto',
         marginVertical: 25,
+        height: 500,
         
     },
  

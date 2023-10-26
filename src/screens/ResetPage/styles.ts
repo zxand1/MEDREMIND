@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "white",
+        backgroundColor: "#ffffff",
         padding: 20,
         borderRadius: 18,
         height: "35%",
