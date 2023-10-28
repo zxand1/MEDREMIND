@@ -22,8 +22,12 @@ const styles = StyleSheet.create({
         
     },
     submiticon:{
-        position:'absolute',
         left:25,
+        top:10,
+        
+    },
+    submiticon2:{
+        left:270,
         top:15
     },
     logoTitle: {
@@ -41,6 +45,7 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: 'center',
         right: 90,
+        
     },
     title: {
         fontSize: 20,
@@ -57,39 +62,40 @@ const styles = StyleSheet.create({
         height: 550,
         
     },
- 
-    submitBtn: {
-        borderRadius: 18,
-        marginTop: 20,
-        marginBottom: 12,
-        
-    },
+    button:{
+        width:30,
+        height:30,
+        position:'absolute'
+      },
+      button2:{
+        width:30,
+        height:30,
+        position:'absolute'
+      },
+    
+    
     submitBtnBackground: {
-        width: 325,
-        height : 60,
+        width: '100%',
+        height : 'auto',
         borderRadius:25,
         padding: 5,
+        marginBottom: 10,
+        marginVertical: 5,
     },
     submitText: {
         color: "white",
         textAlign: "center",
-        fontWeight: "600",
-        fontSize: 20,
-        position:'relative',
+        fontWeight: "500",
+        fontSize: 18,     
+        
     },
-    submitText2: {
-        color: "white",
-        textAlign: "center",
-        fontWeight: "600",
-        fontSize: 15,
-        position:'relative',
+    teste: {
+        borderRadius: 18,
+        marginTop: 40,
+        marginBottom: 12,
+        
     },
-    icon:{
-        textAlign:'center',
-        justifyContent:'center',
-        position:'absolute',
-        padding: 8,
-    }
+    
         
 });
 
