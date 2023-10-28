@@ -6,6 +6,7 @@ export declare global{
             ResetPage: undefined;
             ProgramPage:undefined;
             Tabnavigation:undefined;
+            RegisteredPage: undefined;
         }
     }
 }

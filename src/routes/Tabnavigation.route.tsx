@@ -8,6 +8,7 @@ import ProgramPage from '../screens/ProgramPage';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import RegisteredPage from '../screens/RegisteredPage';
 const Tab = createBottomTabNavigator();
 
 export default function Tabnavigation() {
@@ -19,8 +20,8 @@ export default function Tabnavigation() {
       }}
     >
             <Tab.Screen
-        name="Programados"
-        component={ProgramPage}
+        name="Cadastrados"
+        component={RegisteredPage}
         options={{
             title:'',
             headerTransparent: true,

@@ -4,6 +4,7 @@ import RegisterPage from "../screens/RegisterPage";
 import AuthPage from "../screens/AuthPage";
 import ResetPage from "../screens/ResetPage";
 import Program from "../screens/ProgramPage";
+import RegisteredPage from "../screens/RegisteredPage";
 const {Screen, Navigator}= createNativeStackNavigator();
 
 export default function StackRoutes(){
@@ -32,7 +33,11 @@ export default function StackRoutes(){
                  <Screen 
                     name="Tabnavigation" 
                     component={Tabnavigation}
-            />            
+            />      
+                <Screen 
+                    name="RegisteredPage" 
+                    component={RegisteredPage}
+            />         
             </Navigator>
     );
 }
