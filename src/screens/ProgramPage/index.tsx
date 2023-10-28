@@ -6,8 +6,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 import styles from "./styles";
 import { FaRocket } from 'react-icons/fa';
-import { FontAwesome5 } from '@expo/vector-icons';
-
+import { Fontisto } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default function ProgramPage() {
 
     return(
@@ -43,11 +43,9 @@ export default function ProgramPage() {
               end={{ x: 1, y: 1 }}
               style={styles.submitBtnBackground}
             >
-                <Image
-        style={styles.imageMedical}
-        source={require('../../../assets/images/medicamento.png')}
-        
-      />        
+              <View style={styles.submiticon}>
+              <Fontisto name="pills" size={30} color="white" />
+                </View>     
               <Text style={styles.submitText}>Dipirona</Text>
               <Text style={styles.submitText2}>Em 3 horas(10:00)</Text>
             </LinearGradient>

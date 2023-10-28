@@ -13,19 +13,7 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
     },
-    imageMedical: {
-        height:'0%',
-        width:'50%',
-        right: 100,
-        top:20,
-        position:'absolute',
-        
-    },
-    submiticon:{
-        position:'absolute',
-        left:25,
-        top:15
-    },
+    
     logoTitle: {
         marginBottom: 1,
     },
@@ -49,18 +37,38 @@ const styles = StyleSheet.create({
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "#ffffff",
+        backgroundColor: "#dcdcdc",
         padding: 20,
-        borderRadius: 20,
+        borderRadius: 10,
         maxWidth: 'auto',
         marginVertical: 25,
         height: 550,
         
     },
+    submiticon:{
+        position:'absolute',
+        left:25
+    },
+
+    text:{
+        color:'black',
+        fontSize:18,
+        
+      },
+
+    button:{
+        width:'100%',
+        height:40,
+        backgroundColor:'white',
+        borderRadius:10,
+        justifyContent:'center',
+        alignItems:'center',
+      },
+      
  
     submitBtn: {
         borderRadius: 18,
-        marginTop: 20,
+        marginTop: 40,
         marginBottom: 12,
         
     },
