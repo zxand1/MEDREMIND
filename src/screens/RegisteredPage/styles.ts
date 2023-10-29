@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         marginTop: 20,
         marginBottom: 12,
+        paddingTop: 18
         
     },
     submitBtnBackground: {
@@ -89,7 +90,21 @@ const styles = StyleSheet.create({
     EditBtnBackground:{
         textAlign: 'right',
         
-    }
+    },
+
+    button:{
+        width:'100%',
+        height:25,
+        backgroundColor:'white',
+        borderRadius:10,
+        justifyContent:'center',
+        alignItems:'center',
+      },
+
+      submiticon:{
+        position:'absolute',
+        left:30,
+    },
         
 });
 
