@@ -12,74 +12,74 @@ import { Ionicons } from '@expo/vector-icons';
 import ProgramPage from "../ProgramPage";
 export default function ConfigPage() {
 
-    return(
-        <ImageBackground
-        source={require("../../../assets/images/wallpaper.png")}
-        style={styles.imageBackground}
-      >
-        <StatusBar style="light" />
-        <SafeAreaView style={styles.container}>
-         
-           <View style={styles.logoTitle}>
-           <Animatable.Image
+  return (
+    <ImageBackground
+      source={require("../../../assets/images/wallpaper.png")}
+      style={styles.imageBackground}
+    >
+      <StatusBar style="light" />
+      <SafeAreaView style={styles.container}>
+
+        <View style={styles.logoTitle}>
+          <Animatable.Image
             source={require("../../../assets/images/logo.png")}
             style={styles.logoImage}
             animation="rotate"
             iterationCount="infinite"
             duration={3800}
             direction="alternate-reverse"
-            
+
           />
-            <Text style={styles.logoText}>Med</Text>
-            <Text style={styles.logoText}>Remind</Text>
-          </View>
-          <View style={styles.form}>
+          <Text style={styles.logoText}>Med</Text>
+          <Text style={styles.logoText}>Remind</Text>
+        </View>
+        <View style={styles.form}>
           <ScrollView>
             <Text style={styles.title}>Configurações:</Text>
 
-          <View style={styles.submitBtn}>
-          <TouchableOpacity style={styles.button}            
-              onPress={() => ConfigPage()}  >
+            <View style={styles.submitBtn}>
+              <TouchableOpacity style={styles.button}
+                onPress={() => ConfigPage()}  >
                 <View style={styles.submiticon}>
-                <Ionicons name="notifications" size={24} color="black"  />
+                  <Ionicons name="notifications" size={24} color="black" />
                 </View>
                 <Text style={styles.text}>Notificações</Text>
               </TouchableOpacity>
-          </View>
-          <View style={styles.submitBtn}>
-          <TouchableOpacity style={styles.button}            
-              onPress={() => ConfigPage()}  >
+            </View>
+            <View style={styles.submitBtn}>
+              <TouchableOpacity style={styles.button}
+                onPress={() => ConfigPage()}  >
                 <View style={styles.submiticon}>
-                <FontAwesome name="user" size={24} color="black" />
+                  <FontAwesome name="user" size={24} color="black" />
                 </View>
                 <Text style={styles.text}>Nome de usuário</Text>
               </TouchableOpacity>
-          </View>
-          <View style={styles.submitBtn}>
-          <TouchableOpacity style={styles.button}            
-              onPress={() => ConfigPage()}  >
+            </View>
+            <View style={styles.submitBtn}>
+              <TouchableOpacity style={styles.button}
+                onPress={() => ConfigPage()}  >
                 <View style={styles.submiticon}>
-                <FontAwesome name="paint-brush" size={24} color="black" />
+                  <FontAwesome name="paint-brush" size={24} color="black" />
                 </View>
                 <Text style={styles.text}>Tema</Text>
               </TouchableOpacity>
-          </View>
-          <View style={styles.submitBtn}>
-          <TouchableOpacity style={styles.button}            
-              onPress={() => ConfigPage()}  >
+            </View>
+            <View style={styles.submitBtn}>
+              <TouchableOpacity style={styles.button}
+                onPress={() => ConfigPage()}  >
                 <View style={styles.submiticon}>
-                <MaterialIcons name="monochrome-photos" size={24} color="black" />
+                  <MaterialIcons name="monochrome-photos" size={24} color="black" />
                 </View>
                 <Text style={styles.text}>Personalizar foto</Text>
               </TouchableOpacity>
-          </View>
-          
+            </View>
+
 
           </ScrollView>
         </View>
-        
+
       </SafeAreaView>
     </ImageBackground>
-    );
+  );
 
 }
