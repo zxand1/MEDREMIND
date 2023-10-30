@@ -4,12 +4,8 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import ConfigPage from '../screens/ConfigPage';
 import ProgramPage from '../screens/ProgramPage';
 import { Ionicons } from '@expo/vector-icons';
-<<<<<<< Updated upstream
 import { MaterialIcons } from '@expo/vector-icons'; 
 import RegisteredPage from '../screens/RegisteredPage';
-=======
-import { MaterialIcons } from '@expo/vector-icons';
->>>>>>> Stashed changes
 const Tab = createBottomTabNavigator();
 
 export default function Tabnavigation() {
