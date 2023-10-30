@@ -34,12 +34,21 @@ export default function StackRoutes(){
                 <Screen 
                     name="Tabnavigation" 
                     component={Tabnavigation}
+<<<<<<< Updated upstream
             />      
                 <Screen 
                     name="RegisteredPage" 
                     component={RegisteredPage}
             />         
                 <Screen 
+=======
+            />
+            <Screen 
+                    name="ConfigPage" 
+                    component={ConfigPage}
+            />   
+            <Screen 
+>>>>>>> Stashed changes
                     name="ConfigPage" 
                     component={ConfigPage}
             />          
