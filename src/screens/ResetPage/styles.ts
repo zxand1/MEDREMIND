@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "white",
+        backgroundColor: "#E6E6FA",
         padding: 20,
         borderRadius: 18,
         height: "35%",
     },
     formInput: {
         textAlign: "center",
-        backgroundColor: "#E6E6FA",
+        backgroundColor: "#ffffff",
         fontSize: 18,
         paddingHorizontal: 15,
         paddingVertical: 8,
