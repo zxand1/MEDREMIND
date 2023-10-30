@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Image, Button } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -6,11 +5,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 import styles from "../RegisteredPage/styles";
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { FaRocket } from 'react-icons/fa';
-import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function RegisteredPage() {
   return(
