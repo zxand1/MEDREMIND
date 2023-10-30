@@ -13,23 +13,7 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
     },
-    imageMedical: {
-        height:'0%',
-        width:'50%',
-        right: 100,
-        top:20,
-        position:'absolute',
-        
-    },
-    submiticon:{
-        left:25,
-        top:10,
-        
-    },
-    submiticon2:{
-        left:270,
-        top:15
-    },
+    
     logoTitle: {
         marginBottom: 1,
     },
@@ -45,7 +29,6 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: 'center',
         right: 90,
-        
     },
     title: {
         fontSize: 20,
@@ -54,48 +37,67 @@ const styles = StyleSheet.create({
         fontWeight: "600",
     },
     form: {
-        backgroundColor: "#ffffff",
+        backgroundColor: "#dcdcdc",
         padding: 20,
-        borderRadius: 20,
+        borderRadius: 10,
         maxWidth: 'auto',
         marginVertical: 25,
         height: 550,
         
     },
-    button:{
-        width:30,
-        height:30,
-        position:'absolute'
-      },
-      button2:{
-        width:30,
-        height:30,
-        position:'absolute'
-      },
-    
-    
-    submitBtnBackground: {
-        width: '100%',
-        height : 'auto',
-        borderRadius:25,
-        padding: 5,
-        marginBottom: 10,
-        marginVertical: 5,
+    submiticon:{
+        position:'absolute',
+        left:25
     },
-    submitText: {
-        color: "white",
-        textAlign: "center",
-        fontWeight: "500",
-        fontSize: 18,     
+
+    text:{
+        color:'black',
+        fontSize:18,
         
-    },
-    teste: {
+      },
+
+    button:{
+        width:'100%',
+        height:40,
+        backgroundColor:'white',
+        borderRadius:10,
+        justifyContent:'center',
+        alignItems:'center',
+      },
+      
+ 
+    submitBtn: {
         borderRadius: 18,
         marginTop: 40,
         marginBottom: 12,
         
     },
-    
+    submitBtnBackground: {
+        width: 325,
+        height : 60,
+        borderRadius:25,
+        padding: 5,
+    },
+    submitText: {
+        color: "white",
+        textAlign: "center",
+        fontWeight: "600",
+        fontSize: 20,
+        position:'relative',
+    },
+    submitText2: {
+        color: "white",
+        textAlign: "center",
+        fontWeight: "600",
+        fontSize: 15,
+        position:'relative',
+    },
+    icon:{
+        textAlign:'center',
+        justifyContent:'center',
+        position:'absolute',
+        padding: 8,
+    }
         
 });
 

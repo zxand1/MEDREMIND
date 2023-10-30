@@ -7,6 +7,7 @@ export declare global{
             ProgramPage:undefined;
             Tabnavigation:undefined;
             RegisteredPage: undefined;
+            ConfigPage:undefined;
         }
     }
 }

@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import ConfigPage from '../screens/ConfigPage';
 import ProgramPage from '../screens/ProgramPage';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons'; 
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import RegisteredPage from '../screens/RegisteredPage';
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +43,7 @@ export default function Tabnavigation() {
         }}
       />  
        <Tab.Screen
-        name="Relatorio"
+        name="Novo Registro"
         component={ProgramPage}
         options={{
             title:'',
@@ -59,7 +56,7 @@ export default function Tabnavigation() {
         }}
       />       
       <Tab.Screen
-        name="sair"
+        name="Histórico"
         component={ProgramPage}
         options={{
             title:'',
@@ -74,8 +71,8 @@ export default function Tabnavigation() {
         
       />  
        <Tab.Screen
-        name="Configuracao"
-        component={ProgramPage}
+        name="Configurações"
+        component={ConfigPage}
         options={{
             title:'',
             headerTransparent: true,
