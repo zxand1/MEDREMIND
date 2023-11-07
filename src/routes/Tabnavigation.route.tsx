@@ -6,6 +6,8 @@ import ProgramPage from '../screens/ProgramPage';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import RegisteredPage from '../screens/RegisteredPage';
+import HistoricPage from '../screens/HistoricPage';
+import NewRegistrationPage from '../screens/NewRegistrationPage';
 const Tab = createBottomTabNavigator();
 
 export default function Tabnavigation() {
@@ -44,7 +46,7 @@ export default function Tabnavigation() {
       />
       <Tab.Screen
         name="Novo Registro"
-        component={ProgramPage}
+        component={NewRegistrationPage}
         options={{
           title: '',
           headerTransparent: true,
@@ -57,7 +59,7 @@ export default function Tabnavigation() {
       />
       <Tab.Screen
         name="Histórico"
-        component={ProgramPage}
+        component={HistoricPage}
         options={{
           title: '',
           headerTransparent: true,

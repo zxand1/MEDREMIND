@@ -6,6 +6,8 @@ import ResetPage from "../screens/ResetPage";
 import ConfigPage from "../screens/ConfigPage";
 import Program from "../screens/ProgramPage";
 import RegisteredPage from "../screens/RegisteredPage";
+import HistoricPage from "../screens/HistoricPage";
+import NewRegistrationPage from "../screens/NewRegistrationPage";
 const {Screen, Navigator}= createNativeStackNavigator();
 
 export default function StackRoutes(){
@@ -42,7 +44,15 @@ export default function StackRoutes(){
             <Screen 
                     name="ConfigPage" 
                     component={ConfigPage}
-            />         
+            />
+                <Screen 
+                    name="HistoricPage" 
+                    component={HistoricPage}
+            />     
+                <Screen 
+                    name="NewRegistrationPage" 
+                    component={NewRegistrationPage}
+            />     
         </Navigator>
 
 

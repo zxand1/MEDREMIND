@@ -10,7 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-export default function ProgramPage() {
+export default function HistoricPage() {
 
     return(
         <ImageBackground
@@ -35,7 +35,7 @@ export default function ProgramPage() {
           </View>
           <View style={styles.form}>
           
-            <Text style={styles.title}>Medicamentos Programados:</Text>
+            <Text style={styles.title}>Histórico de Medicamentos:</Text>
             <ScrollView>
           <View >          
             <LinearGradient
@@ -47,7 +47,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -56,10 +56,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -73,7 +70,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -82,10 +79,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >   
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -99,7 +93,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -108,10 +102,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -125,7 +116,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -134,10 +125,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >   
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -151,7 +139,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -160,10 +148,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >   
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -177,7 +162,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -186,10 +171,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -203,7 +185,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -212,10 +194,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -229,7 +208,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -238,10 +217,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -255,7 +231,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -264,10 +240,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -281,7 +254,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -290,10 +263,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >  
               </TouchableOpacity>
             </LinearGradient>
             </View>
@@ -307,7 +277,7 @@ export default function ProgramPage() {
               <View >
               <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
           <TouchableOpacity style={styles.button}            
-              onPress={() => ProgramPage()}  >
+              onPress={() => HistoricPage()}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="add-circle-sharp" size={30} color="white" />
                 </View>                
@@ -316,10 +286,7 @@ export default function ProgramPage() {
               
                   
               <TouchableOpacity style={styles.button2}            
-              onPress={() => ProgramPage()}  >
-                <View style={styles.submiticon2}>
-                <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                </View>   
+              onPress={() => HistoricPage()}  >
               </TouchableOpacity>
             </LinearGradient>
             </View>
