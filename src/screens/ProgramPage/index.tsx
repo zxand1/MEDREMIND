@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Image, Pressable } from "react-native";
 import { StatusBar } from 'expo-status-bar';
-import { Button } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 import styles from "./styles";
 import { Ionicons } from '@expo/vector-icons';
-import { Fontisto } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 export default function ProgramPage() {
 
   return (
