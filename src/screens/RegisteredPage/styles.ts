@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
         paddingTop: 10
     },
     submitBtnBackground: {
-        width: 325,
-        height: 70,
+        width: '100%',
+        height : 60,
         borderRadius: 25,
         padding: 5,
     },
