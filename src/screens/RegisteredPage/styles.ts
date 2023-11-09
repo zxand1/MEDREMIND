@@ -56,47 +56,28 @@ const styles = StyleSheet.create({
     submitBtn: {
         borderRadius: 18,
         marginTop: 20,
-        marginBottom: 12,
-        paddingTop: 18
+        marginBottom: 15,
+        paddingTop: 10
         
     },
     submitBtnBackground: {
         width: 325,
-        height : 60,
+        height : 70,
         borderRadius:25,
         padding: 5,
     },
     submitText: {
         color: "white",
-        textAlign: "center",
         fontWeight: "600",
-        fontSize: 20,
-        position:'relative',
-        marginTop: 10
+        fontSize: 22,
+        padding: 12,
+        justifyContent: "center",
     },
-    submitText2: {
-        color: "white",
-        textAlign: "center",
-        fontWeight: "600",
-        fontSize: 15,
-        position:'relative',
-    },
-    icon:{
-        textAlign:'center',
-        justifyContent:'center',
-        position:'absolute',
-        padding: 8,
-    },
-    EditBtnBackground:{
-        textAlign: 'right',
-        
-    },
-
     button:{
         width:'100%',
-        height:25,
+        height: 40,
         backgroundColor:'white',
-        borderRadius:10,
+        borderRadius: 18,
         justifyContent:'center',
         alignItems:'center',
       },

@@ -29,183 +29,21 @@ export default function RegisteredPage() {
         <Text style={styles.logoText}>Remind</Text>
       </View>
       <View style={styles.form}>
-      
         <Text style={styles.title}>Medicamentos Cadastrados:</Text>
       <ScrollView>
-
-      <View style={styles.submitBtn}>
-      <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-        
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-        </View>
-
         <View style={styles.submitBtn}>
-
         <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-      </View>
-      
-      <View style={styles.submitBtn}>
-
-        <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.submitBtn}>
-
-        <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.submitBtn}>
-
-        <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.submitBtn}>
-
-        <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.submitBtn}>
-
-        <TouchableOpacity style={styles.button}
-        onPress={() => RegisteredPage()} >
-        
-        <View style={styles.submiticon}>
-          <Ionicons name="create" size={24} color="black" />
-        </View>
-
-        <LinearGradient
-          colors={["#110e9d", "#2e84c1"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.submitBtnBackground}
-        >
-            <Image
-    style={styles.imageMedical}
-    source={require('../../../assets/images/medicamento.png')}
-    
-  />        
-          <Text style={styles.submitText}>Dipirona</Text>
-        </LinearGradient>
-        </TouchableOpacity>
-      </View>
+          onPress={() => RegisteredPage()} > 
+          <LinearGradient
+            colors={["#110e9d", "#2e84c1"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.submitBtnBackground}
+          >       
+            <Text style={styles.submitText}>Dipirona</Text>
+          </LinearGradient>
+          </TouchableOpacity>
+          </View>
 
       </ScrollView>
     </View>
