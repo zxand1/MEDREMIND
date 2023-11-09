@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Image, Pressable } from "react-native";
+import { Text, View, ImageBackground, TouchableOpacity, ScrollView, Image, Pressable } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 import styles from "./styles";
 import { Ionicons } from '@expo/vector-icons';
-export default function ProgramPage() {
+export default function HistoricPage() {
 
   return (
     <ImageBackground
@@ -31,7 +30,7 @@ export default function ProgramPage() {
         </View>
         <View style={styles.form}>
 
-          <Text style={styles.title}>Medicamentos Programados:</Text>
+          <Text style={styles.title}>Histórico de Medicamentos:</Text>
           <ScrollView>
             <View >
               <LinearGradient
@@ -42,21 +41,13 @@ export default function ProgramPage() {
 
                 <View >
                   <Text style={styles.submitText}>Dipirona{'\n'}Em 3 horas(10:00)</Text>
-                  <TouchableOpacity style={styles.button}
-                    onPress={() => ProgramPage()}  >
+                  <TouchableOpacity style={styles.icon}
+                    onPress={() => HistoricPage()}  >
                     <View style={styles.submiticon}>
                       <Ionicons name="add-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
-
-
-                <TouchableOpacity style={styles.button2}
-                  onPress={() => ProgramPage()}  >
-                  <View style={styles.submiticon2}>
-                    <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                  </View>
-                </TouchableOpacity>
               </LinearGradient>
             </View>
             <View >
@@ -65,23 +56,16 @@ export default function ProgramPage() {
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.submitBtnBackground}>
+
                 <View >
                   <Text style={styles.submitText}>Benegripe{'\n'}Em 5 horas(15:00)</Text>
-                  <TouchableOpacity style={styles.button}
-                    onPress={() => ProgramPage()}  >
+                  <TouchableOpacity style={styles.icon}
+                    onPress={() => HistoricPage()}  >
                     <View style={styles.submiticon}>
                       <Ionicons name="add-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
-
-
-                <TouchableOpacity style={styles.button2}
-                  onPress={() => ProgramPage()}  >
-                  <View style={styles.submiticon2}>
-                    <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
-                  </View>
-                </TouchableOpacity>
               </LinearGradient>
             </View>
           </ScrollView>

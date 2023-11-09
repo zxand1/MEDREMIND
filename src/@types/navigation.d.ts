@@ -8,6 +8,7 @@ export declare global{
             Tabnavigation:undefined;
             RegisteredPage: undefined;
             ConfigPage:undefined;
+            HistoricPage:undefined;
         }
     }
 }
