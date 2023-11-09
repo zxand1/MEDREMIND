@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import ConfigPage from '../screens/ConfigPage';
 import ProgramPage from '../screens/ProgramPage';
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons';
 import RegisteredPage from '../screens/RegisteredPage';
 import HistoricPage from '../screens/HistoricPage';
 import NewRegistrationPage from '../screens/NewRegistrationPage';

@@ -61,7 +61,7 @@ export default function ResetPage() {
             value={formData.email}
             onChangeText={(email) => {
               setFormData((formData) => ({ ...formData, email }));
-              setFormError({ email: "",});
+              setFormError({ email: "", });
             }}
             placeholder="E-mail"
             autoCapitalize="none"

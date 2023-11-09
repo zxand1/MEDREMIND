@@ -70,7 +70,7 @@ export default function RegisterPage() {
             value={formData.username}
             onChangeText={(username) => {
               setFormData((formData) => ({ ...formData, username }));
-              setFormError({ username: "", email: "", password: "", confirmpassword:"", });
+              setFormError({ username: "", email: "", password: "", confirmpassword: "", });
             }}
             placeholder="Usuário"
             autoCapitalize="none"
@@ -87,7 +87,7 @@ export default function RegisterPage() {
             value={formData.email}
             onChangeText={(email) => {
               setFormData((formData) => ({ ...formData, email }));
-              setFormError({ username: "", email: "", password: "", confirmpassword:"" });
+              setFormError({ username: "", email: "", password: "", confirmpassword: "" });
             }}
             placeholder="E-mail"
             autoCapitalize="none"
@@ -104,7 +104,7 @@ export default function RegisterPage() {
             value={formData.password}
             onChangeText={(password) => {
               setFormData((formData) => ({ ...formData, password }));
-              setFormError({ username: "", email: "", password: "", confirmpassword:"" });
+              setFormError({ username: "", email: "", password: "", confirmpassword: "" });
             }}
             placeholder="Senha"
             secureTextEntry
@@ -122,7 +122,7 @@ export default function RegisterPage() {
             value={formData.confirmpassword}
             onChangeText={(confirmpassword) => {
               setFormData((formData) => ({ ...formData, confirmpassword }));
-              setFormError({ username: "", email: "", password: "", confirmpassword:"" });
+              setFormError({ username: "", email: "", password: "", confirmpassword: "" });
             }}
             placeholder="Confirme sua senha"
             secureTextEntry

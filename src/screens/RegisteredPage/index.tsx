@@ -7,7 +7,7 @@ import styles from "./styles";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function RegisteredPage() {
-  return(
+  return (
     <ImageBackground
     source={require("../../../assets/images/wallpaper.png")}
     style={styles.imageBackground}

@@ -7,7 +7,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
 import styles from "./styles";
 
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function AuthPage() {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ export default function AuthPage() {
   });
 
   const navigation = useNavigation();
-  
+
   function openRegister() {
     navigation.navigate('RegisterPage');
   }
