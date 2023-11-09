@@ -49,7 +49,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -75,7 +75,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -101,7 +101,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -127,7 +127,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -153,7 +153,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -179,7 +179,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -205,7 +205,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -231,7 +231,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -257,7 +257,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -283,7 +283,7 @@ export default function ProgramPage() {
                   <TouchableOpacity style={styles.button}
                     onPress={() => ProgramPage()}  >
                     <View style={styles.submiticon}>
-                      <Ionicons name="checkmark-circle-sharp" size={30} color="green" />
+                      <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                     </View>
                   </TouchableOpacity>
                 </View>
