@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
-import styles from "../RegisteredPage/styles";
+import styles from "./styles";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function RegisteredPage() {

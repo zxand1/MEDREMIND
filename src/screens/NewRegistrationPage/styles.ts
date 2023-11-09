@@ -71,15 +71,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "600",
         fontSize: 20,
-        position:'relative',
         marginTop: 10
-    },
-    submitText2: {
-        color: "white",
-        textAlign: "center",
-        fontWeight: "600",
-        fontSize: 15,
-        position:'relative',
     },
     icon:{
         textAlign:'center',

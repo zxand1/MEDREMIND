@@ -14,20 +14,19 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
     },
     imageMedical: {
-        height:'0%',
-        width:'50%',
+        height: '0%',
+        width: '50%',
         right: 100,
-        top:20,
-        position:'relative',
-        
+        top: 20,
+        position: 'relative',
     },
     logoTitle: {
         marginBottom: 1,
     },
-    logoImage:{
-        left:90,
-        top:-345,
-        position:'absolute',
+    logoImage: {
+        left: 90,
+        top: -345,
+        position: 'absolute',
     },
     logoText: {
         fontSize: 35,
@@ -50,20 +49,17 @@ const styles = StyleSheet.create({
         maxWidth: 'auto',
         marginVertical: 25,
         height: 550,
-        
     },
- 
     submitBtn: {
         borderRadius: 18,
         marginTop: 20,
         marginBottom: 15,
         paddingTop: 10
-        
     },
     submitBtnBackground: {
         width: 325,
-        height : 70,
-        borderRadius:25,
+        height: 70,
+        borderRadius: 25,
         padding: 5,
     },
     submitText: {
@@ -71,22 +67,16 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         fontSize: 22,
         padding: 12,
-        justifyContent: "center",
+        textAlign: "center",
     },
-    button:{
-        width:'100%',
+    button: {
+        width: '100%',
         height: 40,
-        backgroundColor:'white',
+        backgroundColor: 'white',
         borderRadius: 18,
-        justifyContent:'center',
-        alignItems:'center',
-      },
-
-      submiticon:{
-        position:'absolute',
-        left:30,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-        
 });
 
 export default styles;

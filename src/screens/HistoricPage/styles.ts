@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     submiticon:{
         left:25,
         top:10,
-        
     },
     submiticon2:{
         left:270,
@@ -62,21 +61,14 @@ const styles = StyleSheet.create({
         height: 550,
         
     },
-    button:{
+    icon:{
         width:30,
         height:30,
-        position:'absolute'
+        position: "absolute",
       },
-      button2:{
-        width:30,
-        height:30,
-        position:'absolute'
-      },
-    
-    
     submitBtnBackground: {
         width: '100%',
-        height : 'auto',
+        height : 60,
         borderRadius:25,
         padding: 5,
         marginBottom: 10,
@@ -85,18 +77,15 @@ const styles = StyleSheet.create({
     submitText: {
         color: "white",
         textAlign: "center",
-        fontWeight: "500",
-        fontSize: 18,     
-        
+        fontWeight: "600",
+        fontSize: 18,
     },
     teste: {
         borderRadius: 18,
         marginTop: 40,
         marginBottom: 12,
         
-    },
-    
-        
+    },     
 });
 
 export default styles;
