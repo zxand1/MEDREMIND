@@ -21,6 +21,31 @@ const styles = StyleSheet.create({
         position:'relative',
         
     },
+    formInput: {
+        textAlign: "center",
+        backgroundColor: "white",
+        fontSize: 18,
+        paddingHorizontal: 15,
+        paddingVertical: 8,
+        borderRadius: 18,
+        marginTop: 5,
+        color: 'black'
+    },
+    select:{
+        height:40,
+        borderRadius: 18,
+        flex: 1,
+        top:5,
+        backgroundColor : "#fff",
+        alignItems      : "center",
+        justifyContent  : "center",
+    },
+    text:{
+        color:'black',
+        marginTop:10,
+        fontSize:16,
+        fontWeight: "600",
+    },
     logoTitle: {
         marginBottom: 1,
     },
@@ -42,6 +67,7 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         color: "black",
         fontWeight: "600",
+        textAlign:'center'
     },
     form: {
         backgroundColor: "#E6E6FA",
@@ -83,11 +109,18 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         
     },
-
+    datePickerButton: {
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        padding: 10,
+        borderRadius: 18,
+        alignItems:'center',
+        marginBottom: 20,
+        top:15
+      },
     button:{
         width:'100%',
-        height:25,
-        backgroundColor:'white',
+        height:'auto',
+
         borderRadius:10,
         justifyContent:'center',
         alignItems:'center',
