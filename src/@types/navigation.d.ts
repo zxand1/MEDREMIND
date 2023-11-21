@@ -3,6 +3,7 @@ export declare global{
         interface RootParamList{
             AuthPage: undefined;
             RegisterPage: undefined;
+            NewRegistrationPage: undefined;
             ResetPage: undefined;
             ProgramPage:undefined;
             Tabnavigation:undefined;

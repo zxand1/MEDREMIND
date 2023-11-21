@@ -13,14 +13,40 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import RNPickerSelect from 'react-native-picker-select';
+
 import DateTimePicker from '@react-native-community/datetimepicker';
 import styles from './styles';
+import uuid from 'react-uuid';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-toast-message';
 
 export default function NewRegistrationPage() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [selectedTime, setSelectedTime] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
+  const [medname, setmedname] = useState("");
+  const [hora, setHora] = useState("");
+  const [tipo, setTipo] = useState("");
+
+ async function handleNew(){
+    const id = uuid();
+    const newData = {
+      id,
+      medname,
+      hora,
+      tipo,
+    }
+
+   await AsyncStorage.setItem("@medremind:medname",JSON.stringify(newData));
+    Toast.show({
+      type:"sucesso",
+      text1:"Cadastrado com sucesso!",
+    })
+    
+  }
+
+
 
   const handleDateChange = (event, date) => {
     if (date !== undefined) {
@@ -43,25 +69,7 @@ export default function NewRegistrationPage() {
     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
   };
 
-  const [formName, setFormName] = useState({
-    medname: "",
-  });
 
-  const [formError, setFormError] = useState({
-    medname: "",
-  });
-  function handleSubmit() {
-    formError.medname = !formName.medname ? "Informe o nome do medicamento !" : "";
-
-    if (Object.values(formError).some((err) => !!err)) {
-      console.log(formError);
-      setFormError({ ...formError });
-      return;
-    }
-
-    console.log(formName);
-    alert("Medicamento cadastrado!");
-  }
 
   return (
     <ImageBackground
@@ -89,7 +97,7 @@ export default function NewRegistrationPage() {
             <View style={styles.select}>
               <RNPickerSelect
                 placeholder={{ label: 'Selecione o tipo', value: null }}
-                onValueChange={(value) => console.log(value)}
+                onValueChange={(setTipo) }
                 items={[
                   { label: 'Comprimidos', value: 'Comprimidos' },
                   { label: 'Dosagem', value: 'Dosagem' },
@@ -102,28 +110,20 @@ export default function NewRegistrationPage() {
             <Text style={styles.text}>Nome do medicamento:</Text>
             <TextInput
               style={[
-                styles.formInput,
-                formError.medname ? styles.formInputError : null,
-              ]}
-              value={formName.medname}
-              onChangeText={(medname) => {
-                setFormName((formName) => ({ ...formName, medname }));
-                setFormError({ medname: ""});
-              }}
+                styles.formInput]}
+              value={medname}
+              onChangeText={(setmedname)}
               placeholder="Digite o nome do medicamento"
-              autoCapitalize="none"
-              returnKeyType="next"
+              
             />
-            {formError.medname && (
-              <Text style={styles.errorMsg}>{formError.medname}</Text>
-            )}
+            
             
 
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
                 placeholder={{ label: 'Selecione o intervalo', value: null }}
-                onValueChange={(value) => console.log(value)}
+                onValueChange={(setHora) }
                 items={[
                   { label: '2 horas', value: '2' },
                   { label: '4 horas', value: '4' },
@@ -172,7 +172,7 @@ export default function NewRegistrationPage() {
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={handleSubmit}
+                onPress={handleNew}
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}

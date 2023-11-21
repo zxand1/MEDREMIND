@@ -4,9 +4,34 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
 import styles from "./styles";
+import React, { useState , useEffect} from 'react';
 import { Ionicons } from '@expo/vector-icons';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { FlatList } from "react-native-gesture-handler";
 export default function RegisteredPage() {
+  const [data, setData]= useState<CardProps[]>([]);
+
+  async function handleFetchData(){
+    const response = await AsyncStorage.getItem("@medremind:medname");
+    const data = response ? JSON.parse(response) : {};
+    console.log((data));
+  }
+
+  useEffect(()=>{
+    handleFetchData();
+  })
+
+  //export type CardProps={
+   // id: string;
+  //  medname:string,
+  //  tipo:string,
+  //  hora:string,
+ // }
+ // type Props={
+ //   data: CardProps;
+ //   onpress:()=> void;
+ // }
+
   return (
     <ImageBackground
     source={require("../../../assets/images/wallpaper.png")}
@@ -30,22 +55,11 @@ export default function RegisteredPage() {
       </View>
       <View style={styles.form}>
         <Text style={styles.title}>Medicamentos Cadastrados:</Text>
-      <ScrollView>
-        <View style={styles.submitBtn}>
-        <TouchableOpacity style={styles.button}
-          onPress={() => RegisteredPage()} > 
-          <LinearGradient
-            colors={["#110e9d", "#2e84c1"]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.submitBtnBackground}
-          >       
-            <Text style={styles.submitText}>Dipirona</Text>
-          </LinearGradient>
-          </TouchableOpacity>
-          </View>
+      
+       
+        
 
-      </ScrollView>
+      
     </View>
     
   </SafeAreaView>
