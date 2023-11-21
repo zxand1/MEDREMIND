@@ -117,6 +117,15 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         top:15
       },
+
+      errorMsg: {
+        color: "#ff375b",
+    }, 
+
+      formInputError: {
+        borderWidth: 2,
+        borderColor: "#ff375b",
+    },
     button:{
         width:'100%',
         height:'auto',

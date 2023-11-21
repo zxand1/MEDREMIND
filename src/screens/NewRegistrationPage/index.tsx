@@ -43,6 +43,26 @@ export default function NewRegistrationPage() {
     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
   };
 
+  const [formName, setFormName] = useState({
+    medname: "",
+  });
+
+  const [formError, setFormError] = useState({
+    medname: "",
+  });
+  function handleSubmit() {
+    formError.medname = !formName.medname ? "Informe o nome do medicamento !" : "";
+
+    if (Object.values(formError).some((err) => !!err)) {
+      console.log(formError);
+      setFormError({ ...formError });
+      return;
+    }
+
+    console.log(formName);
+    alert("Medicamento cadastrado!");
+  }
+
   return (
     <ImageBackground
       source={require('../../../assets/images/wallpaper.png')}
@@ -81,9 +101,23 @@ export default function NewRegistrationPage() {
             </View>
             <Text style={styles.text}>Nome do medicamento:</Text>
             <TextInput
-              style={[styles.formInput]}
+              style={[
+                styles.formInput,
+                formError.medname ? styles.formInputError : null,
+              ]}
+              value={formName.medname}
+              onChangeText={(medname) => {
+                setFormName((formName) => ({ ...formName, medname }));
+                setFormError({ medname: ""});
+              }}
               placeholder="Digite o nome do medicamento"
+              autoCapitalize="none"
+              returnKeyType="next"
             />
+            {formError.medname && (
+              <Text style={styles.errorMsg}>{formError.medname}</Text>
+            )}
+            
 
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
@@ -105,7 +139,7 @@ export default function NewRegistrationPage() {
               style={styles.datePickerButton}
             >
               <Text>{formatSelectedDate()}</Text>
-            </TouchableOpacity>
+            </TouchableOpacity >
             {showDatePicker && (
               <DateTimePicker
                 value={selectedDate}
@@ -138,7 +172,7 @@ export default function NewRegistrationPage() {
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => NewRegistrationPage()}
+                onPress={handleSubmit}
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}
