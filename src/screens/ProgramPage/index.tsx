@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Image, Pressable } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
