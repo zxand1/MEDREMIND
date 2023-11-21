@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         fontSize:16,
         fontWeight: "600",
+
     },
     logoTitle: {
         marginBottom: 1,

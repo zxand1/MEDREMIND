@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import {
   Text,
-  StyleSheet,
   View,
   ImageBackground,
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Platform,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -14,62 +14,60 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import RNPickerSelect from 'react-native-picker-select';
 
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import styles from './styles';
 import uuid from 'react-uuid';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 
 export default function NewRegistrationPage() {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [date, setSelectedDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(new Date());
+  const [time, setSelectedTime] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [medname, setmedname] = useState("");
   const [hora, setHora] = useState("");
   const [tipo, setTipo] = useState("");
 
- async function handleNew(){
-    const id = uuid();
-    const newData = {
-      id,
-      medname,
-      hora,
-      tipo,
-    }
+  async function handleNew() {
+      const id = uuid();
+      const newData = {
+        id,
+        medname,
+        hora,
+        tipo,
+        date,
+        time,
+      }
 
-   await AsyncStorage.setItem("@medremind:medname",JSON.stringify(newData));
-    Toast.show({
-      type:"sucesso",
-      text1:"Cadastrado com sucesso!",
-    })
-    
+      await AsyncStorage.setItem("@medremind:medname", JSON.stringify(newData));
+      Toast.show({
+        type: "sucesso",
+        text1: "Cadastrado com sucesso!",
+      })
   }
 
-
-
-  const handleDateChange = (event, date) => {
+  const handleDateChange = (event: DateTimePickerEvent, date?: Date) => {
     if (date !== undefined) {
       setSelectedDate(date);
     }
     setShowDatePicker(false);
   };
 
-  const handleTimeChange = (event, time) => {
-    if (time !== undefined) {
-      setSelectedTime(time);
+  const handleTimeChange = (event: DateTimePickerEvent, date?: Date) => {
+    if (date !== undefined) {
+      setSelectedTime(date);
     }
     setShowTimePicker(false);
   };
 
+
   const formatSelectedDate = () => {
-    const day = selectedDate.getDate();
-    const month = selectedDate.getMonth() + 1;
-    const year = selectedDate.getFullYear();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
   };
-
-
 
   return (
     <ImageBackground
@@ -97,7 +95,7 @@ export default function NewRegistrationPage() {
             <View style={styles.select}>
               <RNPickerSelect
                 placeholder={{ label: 'Selecione o tipo', value: null }}
-                onValueChange={(setTipo) }
+                onValueChange={(setTipo)}
                 items={[
                   { label: 'Comprimidos', value: 'Comprimidos' },
                   { label: 'Dosagem', value: 'Dosagem' },
@@ -114,16 +112,16 @@ export default function NewRegistrationPage() {
               value={medname}
               onChangeText={(setmedname)}
               placeholder="Digite o nome do medicamento"
-              
+
             />
-            
-            
+
+
 
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
                 placeholder={{ label: 'Selecione o intervalo', value: null }}
-                onValueChange={(setHora) }
+                onValueChange={(setHora)}
                 items={[
                   { label: '2 horas', value: '2' },
                   { label: '4 horas', value: '4' },
@@ -142,33 +140,35 @@ export default function NewRegistrationPage() {
             </TouchableOpacity >
             {showDatePicker && (
               <DateTimePicker
-                value={selectedDate}
+                value={date}
                 mode="date"
                 is24Hour={true}
                 display="default"
                 onChange={handleDateChange}
+                timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
 
-            
+
             {/* Campo de Hora */}
             <TouchableOpacity
               onPress={() => setShowTimePicker(true)}
               style={styles.datePickerButton}
             >
-              <Text>{selectedTime.toLocaleTimeString()}</Text>
+              <Text>{time.toLocaleTimeString()}</Text>
             </TouchableOpacity>
             {showTimePicker && (
               <DateTimePicker
-                value={selectedTime}
+                value={time}
                 mode="time"
                 is24Hour={true}
                 display="default"
                 onChange={handleTimeChange}
+                timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
 
-              
+
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
