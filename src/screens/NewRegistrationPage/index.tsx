@@ -13,12 +13,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import RNPickerSelect from 'react-native-picker-select';
-
 import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import styles from './styles';
 import uuid from 'react-uuid';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
+import { FaAlignCenter } from 'react-icons/fa';
 
 export default function NewRegistrationPage() {
   const [date, setSelectedDate] = useState(new Date());
@@ -29,7 +29,10 @@ export default function NewRegistrationPage() {
   const [hora, setHora] = useState("");
   const [tipo, setTipo] = useState("");
 
+ const { getItem, setItem} = useAsyncStorage("@medremind:medname");
+
   async function handleNew() {
+      try{
       const id = uuid();
       const newData = {
         id,
@@ -40,12 +43,26 @@ export default function NewRegistrationPage() {
         time,
       }
 
-      await AsyncStorage.setItem("@medremind:medname", JSON.stringify(newData));
+      const response = await getItem();
+      const previousData = response ? JSON.parse(response) : [];
+
+      const data = [...previousData, newData];
+
+      await setItem( JSON.stringify(data));
       Toast.show({
-        type: "sucesso",
+        type: "sucess",
         text1: "Cadastrado com sucesso!",
       })
+    
   }
+    catch(error){
+      console.log(error);
+
+      Toast.show({
+        type:"error",
+        text1:"não foi possível cadastrar."
+      })
+  }}
 
   const handleDateChange = (event: DateTimePickerEvent, date?: Date) => {
     if (date !== undefined) {
@@ -120,7 +137,8 @@ export default function NewRegistrationPage() {
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
-                placeholder={{ label: 'Selecione o intervalo', value: null }}
+                
+                placeholder= {  { label: 'Selecione o intervalo', value: null, }}
                 onValueChange={(setHora)}
                 items={[
                   { label: '2 horas', value: '2' },

@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         
     },
     formInput: {
-        textAlign: "center",
         backgroundColor: "white",
         fontSize: 18,
         paddingHorizontal: 15,
@@ -34,11 +33,12 @@ const styles = StyleSheet.create({
     select:{
         height:40,
         borderRadius: 18,
-        flex: 1,
+        textAlign:'center',
         top:5,
         backgroundColor : "#fff",
         alignItems      : "center",
         justifyContent  : "center",
+        position:'relative',
     },
     text:{
         color:'black',
@@ -118,7 +118,9 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         top:15
       },
-
+      placeholder:{
+        textAlign:'center'
+    },
       errorMsg: {
         color: "#ff375b",
     }, 

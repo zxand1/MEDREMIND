@@ -52,9 +52,13 @@ const styles = StyleSheet.create({
     },
     submitBtn: {
         borderRadius: 18,
-        marginTop: 20,
         marginBottom: 15,
-        paddingTop: 10
+        paddingTop: 10,
+        width:"auto",
+        height:80,
+        backgroundColor:'blue',
+        
+        
     },
     submitBtnBackground: {
         width: '100%',
@@ -62,12 +66,18 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         padding: 5,
     },
-    submitText: {
+    text: {
         color: "white",
         fontWeight: "600",
-        fontSize: 22,
-        padding: 12,
-        textAlign: "center",
+        fontSize: 15,
+        lineHeight: 20,
+        left:10
+
+    },
+    submiticon2:{
+        left:'85%',
+        bottom:10,
+        position:'absolute',
     },
     button: {
         width: '100%',
