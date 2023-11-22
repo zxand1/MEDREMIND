@@ -131,9 +131,6 @@ export default function NewRegistrationPage() {
               placeholder="Digite o nome do medicamento"
 
             />
-
-
-
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
@@ -166,8 +163,6 @@ export default function NewRegistrationPage() {
                 timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
-
-
             {/* Campo de Hora */}
             <TouchableOpacity
               onPress={() => setShowTimePicker(true)}
@@ -185,8 +180,6 @@ export default function NewRegistrationPage() {
                 timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
-
-
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
