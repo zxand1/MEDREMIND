@@ -51,25 +51,23 @@ const styles = StyleSheet.create({
         height: 550,
     },
     submitBtn: {
-        borderRadius: 18,
-        marginBottom: 15,
         paddingTop: 10,
-        width:"100%",
-        height:70,
+        width: "100%",
     },
     submitBtnBackground: {
         width: '100%',
-        height : 70,
+        height: 70,
         borderRadius: 25,
         top: 5,
-        padding: 2
+        padding: 2,
+        marginBottom: 10
     },
     text1: {
         color: "white",
         fontWeight: "800",
         fontSize: 18,
         lineHeight: 20,
-        left:15,
+        left: 15,
         bottom: 5,
     },
     text2: {
@@ -77,7 +75,7 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         fontSize: 13,
         lineHeight: 20,
-        left:15,
+        left: 15,
         bottom: 7
     },
     text3: {
@@ -85,18 +83,18 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         fontSize: 13,
         lineHeight: 20,
-        left:15,
-        bottom: 7
+        left: 15,
+        bottom: 11,
     },
-    submiticon1:{
-        left:'85%',
-        bottom: 8,
-        position:'absolute',
+    submiticon1: {
+        left: '85%',
+        bottom: 40,
+        position: 'absolute',
     },
-    submiticon2:{
-        left:'85%',
-        bottom: 8,
-        position:'absolute',
+    submiticon2: {
+        left: '85%',
+        bottom: 10,
+        position: 'absolute',
     },
     button: {
         width: '100%',
