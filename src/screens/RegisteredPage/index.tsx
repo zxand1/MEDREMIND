@@ -7,7 +7,7 @@ import { AntDesign } from '@expo/vector-icons';
 import styles from "./styles";
 import React, { useState , useEffect,useCallback } from 'react';
 import {useFocusEffect} from "@react-navigation/native"
-import AsyncStorage, {useAsyncStorage} from '@react-native-async-storage/async-storage';
+import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 
 
 export default function RegisteredPage() {
@@ -15,7 +15,7 @@ export default function RegisteredPage() {
   const { getItem, setItem} = useAsyncStorage("@medremind:medname");
   
   async function handleFetchData(){
-    const response = await AsyncStorage.getItem("@medremind:medname");
+    const response = await getItem();
     const data = response ? JSON.parse(response) : [];
     setData(data);
   }
@@ -30,9 +30,6 @@ export default function RegisteredPage() {
   useFocusEffect(useCallback(()=>{
     handleFetchData();
   }, []));
-
- 
-   
  
 
    type CardProps = {
@@ -45,6 +42,8 @@ export default function RegisteredPage() {
     data: CardProps;
     onPress:()=> void;
   }
+  
+
   
   return (
     <ImageBackground

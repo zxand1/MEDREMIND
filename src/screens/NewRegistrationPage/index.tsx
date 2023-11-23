@@ -17,7 +17,7 @@ import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/dat
 import styles from './styles';
 import uuid from 'react-uuid';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
-import Toast from 'react-native-toast-message';
+import Toast from "react-native-toast-message";
 import { FaAlignCenter } from 'react-icons/fa';
 
 export default function NewRegistrationPage() {
@@ -48,9 +48,9 @@ export default function NewRegistrationPage() {
 
       const data = [...previousData, newData];
 
-      await setItem( JSON.stringify(data));
+      await setItem(JSON.stringify(data));
       Toast.show({
-        type: "sucess",
+        type: "success",
         text1: "Cadastrado com sucesso!",
       })
     
@@ -62,7 +62,7 @@ export default function NewRegistrationPage() {
         type:"error",
         text1:"não foi possível cadastrar."
       })
-  }}
+    }}
 
   const handleDateChange = (event: DateTimePickerEvent, date?: Date) => {
     if (date !== undefined) {
