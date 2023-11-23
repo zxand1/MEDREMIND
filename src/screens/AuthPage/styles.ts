@@ -39,16 +39,16 @@ export const styles = StyleSheet.create({
         fontWeight: "600",
         color: "white",
         textAlign: 'center',
-        top: 80,
+        top: 70,
         position: 'relative',
         width: '100%',
         
     },
     title: {
-        fontSize: 20,
+        fontSize: 30,
         lineHeight: 20,
         color: "black",
-        fontWeight: "600",
+        fontWeight: "800",
     },
     form: {
         backgroundColor: "#E6E6FA",
@@ -60,8 +60,8 @@ export const styles = StyleSheet.create({
         
     },
     icon:{
-        width:30,
-        height:30,
+        width:40,
+        height:40,
         position: "absolute",
       },
     submitBtnBackground: {
@@ -75,23 +75,26 @@ export const styles = StyleSheet.create({
     submitText: {
         color: "white",
         textAlign: "center",
-        fontWeight: "600",
-        fontSize: 18,
-    },
-    teste: {
-        borderRadius: 18,
-        marginTop: 40,
-        marginBottom: 12,
+        fontWeight: "800",
+        fontSize: 20,
         
+    }, 
+    textBtn: {
+        color: "blue",
+        textAlign: "center",
+        fontWeight: "800",
+        fontSize: 20,
+
     },    
     buttonContainer: {
-        backgroundColor: '#D3D3D3',
-        marginTop: 160,
-        marginRight: 130,
-        marginLeft: 130,
+        backgroundColor: 'white',
         paddingTop: 1,
-        borderRadius: 10,
+        height: 60,
+        width: "80%",
+        borderRadius: 18,
         alignItems: 'center',
-        color: '#D3D3D3',
+        justifyContent: "center",
+        top: "600%",
+        left: "10%"
     }
 });

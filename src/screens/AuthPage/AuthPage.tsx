@@ -66,17 +66,20 @@ export default function AuthPage({}) {
           <Text style={styles.logoText}>Remind</Text>
         </View>
 
-        <View style={styles.buttonContainer}>
-
-        <Button 
-        title="Entrar" 
-        onPress={() => {
-          navigation.navigate('Tabnavigation');
-          handleAuthentication();
-        }}
-        />
-
+        <View >
+        <TouchableOpacity 
+        style={styles.buttonContainer}
+          onPress={() => {
+            navigation.navigate('Tabnavigation');
+            handleAuthentication();
+          }}>
+            <Text style={styles.textBtn}>
+              Entrar
+            </Text>
+        </TouchableOpacity>
         </View>
+
+
         </SafeAreaView>
         </ImageBackground>
       );
