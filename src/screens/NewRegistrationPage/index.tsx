@@ -98,16 +98,6 @@ export default function NewRegistrationPage() {
     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
   };
 
-  async function handleCallNotifications() {
-    const {status } = await  Notifications.getPermissionsAsync();
-    if (status !== 'granted'){
-      alert('Você não possui permissão para receber notificações')
-      return;
-    }
-    let token = (await Notifications.getExpoPushTokenAsync()).data;
-    console.log(token);
-  }
-
   return (
     <ImageBackground
       source={require('../../../assets/images/wallpaper.png')}
@@ -154,7 +144,7 @@ export default function NewRegistrationPage() {
             />
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
-              <RNPickerSelect
+              <RNPickerSelect 
                 placeholder= {  { label: 'Selecione o intervalo', value: null, }}
                 onValueChange={(setHora)}
                 items={[
@@ -203,10 +193,7 @@ export default function NewRegistrationPage() {
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => {
-                  handleNew();
-                  handleCallNotifications();
-                }}
+                onPress={handleNew}
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}
