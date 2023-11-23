@@ -63,9 +63,6 @@ export default function AuthPage() {
         </View>
 
         <View style={styles.container}>
-          <Text>
-            Usuário conectado: {isAuthenticated ? 'Sim' : 'Não'}
-          </Text>
 
         <Button 
         title="Entrar" 

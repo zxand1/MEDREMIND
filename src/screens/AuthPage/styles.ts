@@ -85,4 +85,8 @@ export const styles = StyleSheet.create({
         marginBottom: 12,
         
     },    
+    Button: {
+        paddingTop: 170,
+        color: '#808080',
+    }
 });
