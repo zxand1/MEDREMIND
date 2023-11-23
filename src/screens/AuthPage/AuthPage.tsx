@@ -66,7 +66,7 @@ export default function AuthPage({}) {
           <Text style={styles.logoText}>Remind</Text>
         </View>
 
-        <View style={styles.container}>
+        <View style={styles.buttonContainer}>
 
         <Button 
         title="Entrar" 

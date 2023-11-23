@@ -32,8 +32,8 @@ export const styles = StyleSheet.create({
         marginBottom: 1,
     },
     logoImage:{
-        left:90,
-        top:-345,
+        left:30,
+        top:-400,
         position:'absolute',
     },
     logoText: {
@@ -42,7 +42,9 @@ export const styles = StyleSheet.create({
         fontWeight: "600",
         color: "white",
         textAlign: 'center',
-        right: 90,
+        top: 80,
+        position: 'relative',
+        width: '100%',
         
     },
     title: {
@@ -85,8 +87,14 @@ export const styles = StyleSheet.create({
         marginBottom: 12,
         
     },    
-    Button: {
-        paddingTop: 170,
-        color: '#808080',
+    buttonContainer: {
+        backgroundColor: '#D3D3D3',
+        marginTop: 160,
+        marginRight: 130,
+        marginLeft: 130,
+        paddingTop: 1,
+        borderRadius: 10,
+        alignItems: 'center',
+        color: '#D3D3D3',
     }
 });
