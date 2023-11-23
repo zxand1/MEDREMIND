@@ -55,12 +55,13 @@ export default function NewRegistrationPage() {
       })
     
   }
+  
     catch(error){
       console.log(error);
 
-      Toast.show({
-        type:"error",
-        text1:"não foi possível cadastrar."
+    Toast.show({
+      type:"error",
+      text1:"não foi possível cadastrar."
       })
     }}
 
@@ -129,7 +130,6 @@ export default function NewRegistrationPage() {
               value={medname}
               onChangeText={(setmedname)}
               placeholder="Digite o nome do medicamento"
-
             />
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
