@@ -7,8 +7,12 @@ import ProgramPage from '../ProgramPage';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Animatable from 'react-native-animatable'
+import navigation from 'react-native-navigation';
+import { useNavigation } from '@react-navigation/native';
+import Tabnavigation from '../../routes/Tabnavigation.route';
 
-export default function AuthPage() {
+export default function AuthPage({}) {
+  const navigation = useNavigation();
   
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -67,7 +71,7 @@ export default function AuthPage() {
         <Button 
         title="Entrar" 
         onPress={() => {
-          ProgramPage;
+          navigation.navigate('Tabnavigation');
           handleAuthentication();
         }}
         />
