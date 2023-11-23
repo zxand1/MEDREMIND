@@ -18,7 +18,16 @@ import styles from './styles';
 import uuid from 'react-uuid';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from "react-native-toast-message";
-import { FaAlignCenter } from 'react-icons/fa';
+import * as Notifications from 'expo-notifications';
+
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldPlaySound: true,
+    shouldSetBadge: true,
+    shouldShowAlert: true,
+  }),
+});
 
 export default function NewRegistrationPage() {
   const [date, setSelectedDate] = useState(new Date());
@@ -88,6 +97,16 @@ export default function NewRegistrationPage() {
     const year = date.getFullYear();
     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
   };
+
+  async function handleCallNotifications() {
+    const {status } = await  Notifications.getPermissionsAsync();
+    if (status !== 'granted'){
+      alert('Você não possui permissão para receber notificações')
+      return;
+    }
+    let token = (await Notifications.getExpoPushTokenAsync()).data;
+    console.log(token);
+  }
 
   return (
     <ImageBackground
@@ -184,7 +203,10 @@ export default function NewRegistrationPage() {
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={handleNew}
+                onPress={() => {
+                  handleNew();
+                  handleCallNotifications();
+                }}
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}

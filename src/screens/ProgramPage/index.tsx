@@ -91,8 +91,8 @@ export default function ProgramPage() {
 
           <FlatList
             data={data}
-            style={{ marginTop: 5 }}
-            contentContainerStyle={{ marginHorizontal: 20 }}
+            style={{ marginTop: 10 }}
+            contentContainerStyle={{ gap: 10 }}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => {
               return (
