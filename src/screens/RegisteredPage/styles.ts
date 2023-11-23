@@ -51,18 +51,16 @@ const styles = StyleSheet.create({
         height: 550,
     },
     submitBtn: {
-        borderRadius: 18,
-        marginBottom: 15,
         paddingTop: 10,
         width:"100%",
-        height:70,
     },
     submitBtnBackground: {
         width: '100%',
         height : 70,
         borderRadius: 25,
         top: 5,
-        padding: 2
+        padding: 2,
+        marginBottom: 10
     },
     text1: {
         color: "white",

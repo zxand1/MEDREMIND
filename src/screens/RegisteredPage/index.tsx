@@ -78,16 +78,16 @@ export default function RegisteredPage() {
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.submitBtnBackground}>
-          <View  style={styles.submitBtn}>
-            <Text style={styles.text1}>Medicação: {item.medname}</Text>
-            <Text style={styles.text2}>Tipo: {item.tipo}</Text>
-            <Text style={styles.text2}>Intervalo: {item.hora} em {item.hora} horas</Text>
-            <TouchableOpacity onPress={()=> handleRemove(item.id)}>
-            <View style={styles.submiticon2}>
-                <AntDesign name="delete" size={25} color="white" />
-            </View>
-                </TouchableOpacity>           
-          </View>
+                  <View  style={styles.submitBtn}>
+                  <Text style={styles.text1}>Medicação: {item.medname}</Text>
+                  <Text style={styles.text2}>Tipo: {item.tipo}</Text>
+                  <Text style={styles.text2}>Intervalo: {item.hora} em {item.hora} horas</Text>
+                  <TouchableOpacity onPress={()=> handleRemove(item.id)}>
+                  <View style={styles.submiticon2}>
+                      <AntDesign name="delete" size={25} color="white" />
+                  </View>
+                      </TouchableOpacity>           
+                </View>
         </LinearGradient>
 )
 }}
