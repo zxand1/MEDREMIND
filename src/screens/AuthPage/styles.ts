@@ -2,10 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        flex:1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        paddingHorizontal: 12,
+        paddingVertical: 150,
     },
     imageBackground: {
         flex: 1,
@@ -83,5 +84,5 @@ export const styles = StyleSheet.create({
         marginTop: 40,
         marginBottom: 12,
         
-    },     
+    },    
 });

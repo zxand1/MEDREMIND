@@ -1,10 +1,12 @@
 import * as React from 'react';
-import {Button, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
+import {Button, StyleSheet, Text, View, Alert, TouchableOpacity, ImageBackground} from 'react-native';
 import { styles } from './styles';
 import { useState, useEffect } from 'react';
 import * as LocalAuthentication from 'expo-local-authentication';
 import ProgramPage from '../ProgramPage';
-
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from "react-native-safe-area-context";
+import * as Animatable from 'react-native-animatable'
 
 export default function AuthPage() {
   
@@ -39,6 +41,27 @@ export default function AuthPage() {
     })
 
   return (
+    <ImageBackground
+      source={require("../../../assets/images/wallpaper.png")}
+      style={styles.imageBackground}
+    >
+      <StatusBar style="light" />
+      <SafeAreaView style={styles.container}>
+
+      <View style={styles.logoTitle}>
+          <Animatable.Image
+            source={require("../../../assets/images/logo.png")}
+            style={styles.logoImage}
+            animation="rotate"
+            iterationCount="infinite"
+            duration={3800}
+            direction="alternate-reverse"
+
+          />
+          <Text style={styles.logoText}>Med</Text>
+          <Text style={styles.logoText}>Remind</Text>
+        </View>
+
         <View style={styles.container}>
           <Text>
             Usuário conectado: {isAuthenticated ? 'Sim' : 'Não'}
@@ -53,5 +76,7 @@ export default function AuthPage() {
         />
 
         </View>
+        </SafeAreaView>
+        </ImageBackground>
       );
 }
