@@ -80,6 +80,19 @@ const styles = StyleSheet.create({
         left:15,
         bottom: 7
     },
+    text3: {
+        color: "white",
+        fontWeight: "600",
+        fontSize: 13,
+        lineHeight: 20,
+        left:15,
+        bottom: 7
+    },
+    submiticon1:{
+        left:'85%',
+        bottom: 8,
+        position:'absolute',
+    },
     submiticon2:{
         left:'85%',
         bottom: 8,
