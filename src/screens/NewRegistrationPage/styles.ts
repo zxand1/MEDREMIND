@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         borderRadius: 18,
         marginTop: 5,
-        color: 'black'
+        color: 'black',
+        height: 40
     },
     select:{
         height:40,
@@ -118,7 +119,8 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         alignItems:'center',
         marginBottom: 20,
-        top:15
+        top:15,
+        heigh: 40
       },
       placeholder:{
         textAlign:'center'
