@@ -164,10 +164,6 @@ export default function NewRegistrationPage() {
                 timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
             {/* Campo de Hora */}
             <TouchableOpacity
               onPress={() => setShowTimePicker(true)}
