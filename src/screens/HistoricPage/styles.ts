@@ -14,28 +14,19 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
     },
     imageMedical: {
-        height:'0%',
-        width:'50%',
+        height: '0%',
+        width: '50%',
         right: 100,
-        top:20,
-        position:'absolute',
-        
-    },
-    submiticon:{
-        left:25,
-        top:10,
-    },
-    submiticon2:{
-        left:270,
-        top:15
+        top: 20,
+        position: 'relative',
     },
     logoTitle: {
         marginBottom: 1,
     },
-    logoImage:{
-        left:90,
-        top:-345,
-        position:'absolute',
+    logoImage: {
+        left: 90,
+        top: -345,
+        position: 'absolute',
     },
     logoText: {
         fontSize: 35,
@@ -44,7 +35,6 @@ const styles = StyleSheet.create({
         color: "white",
         textAlign: 'center',
         right: 90,
-        
     },
     title: {
         fontSize: 20,
@@ -59,33 +49,50 @@ const styles = StyleSheet.create({
         maxWidth: 'auto',
         marginVertical: 25,
         height: 550,
-        
     },
-    icon:{
-        width:30,
-        height:30,
-        position: "absolute",
-      },
+    submitBtn: {
+        borderRadius: 18,
+        marginBottom: 15,
+        paddingTop: 10,
+        width:"100%",
+        height:70,
+    },
     submitBtnBackground: {
         width: '100%',
-        height : 60,
-        borderRadius:25,
-        padding: 5,
-        marginBottom: 10,
-        marginVertical: 5,
+        height : 70,
+        borderRadius: 25,
+        top: 5,
+        padding: 2
     },
-    submitText: {
+    text1: {
         color: "white",
-        textAlign: "center",
-        fontWeight: "600",
+        fontWeight: "800",
         fontSize: 18,
+        lineHeight: 20,
+        left:15,
+        bottom: 5,
     },
-    teste: {
+    text2: {
+        color: "white",
+        fontWeight: "600",
+        fontSize: 13,
+        lineHeight: 20,
+        left:15,
+        bottom: 7
+    },
+    submiticon2:{
+        left:'85%',
+        bottom: 8,
+        position:'absolute',
+    },
+    button: {
+        width: '100%',
+        height: 40,
+        backgroundColor: 'white',
         borderRadius: 18,
-        marginTop: 40,
-        marginBottom: 12,
-        
-    },     
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
 
 export default styles;

@@ -31,6 +31,8 @@ export default function NewRegistrationPage() {
 
  const { getItem, setItem} = useAsyncStorage("@medremind:medname");
 
+ 
+
   async function handleNew() {
       try{
       const id = uuid();
@@ -47,7 +49,7 @@ export default function NewRegistrationPage() {
       const previousData = response ? JSON.parse(response) : [];
 
       const data = [...previousData, newData];
-
+      console.log(data)
       await setItem(JSON.stringify(data));
       Toast.show({
         type: "success",
