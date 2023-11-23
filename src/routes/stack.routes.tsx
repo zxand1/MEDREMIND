@@ -5,6 +5,7 @@ import RegisteredPage from "../screens/RegisteredPage";
 import HistoricPage from "../screens/HistoricPage";
 import NewRegistrationPage from "../screens/NewRegistrationPage";
 import ProgramPage from "../screens/ProgramPage";
+import AuthPage from "../screens/AuthPage/AuthPage";
 const { Screen, Navigator } = createNativeStackNavigator();
 
 export default function StackRoutes() {
@@ -14,6 +15,10 @@ export default function StackRoutes() {
                 headerShown: false,
             }}
             >
+                <Screen
+                name="AuthPage"
+                component={AuthPage}
+            />
                 <Screen
                 name="Tabnavigation"
                 component={Tabnavigation}
@@ -38,6 +43,8 @@ export default function StackRoutes() {
                 name="NewRegistrationPage"
                 component={NewRegistrationPage}
             />
+            
+            
         </Navigator>
 
 
