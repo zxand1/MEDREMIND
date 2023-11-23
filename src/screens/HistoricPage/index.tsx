@@ -35,7 +35,7 @@ export default function HistoricPage() {
     id: string;
     medname: string,
     tipo: string,
-    hora: string,
+    time: string,
   }
 
   return (
@@ -74,7 +74,7 @@ export default function HistoricPage() {
                   <View style={styles.submitBtn}>
                     <Text style={styles.text1}>Medicação: {item.medname}</Text>
                     <Text style={styles.text2}>Tipo: {item.tipo}</Text>
-                    <Text style={styles.text2}>Intervalo: {item.hora} em {item.hora} horas</Text>
+                    <Text style={styles.text2}>Data: {item.time} </Text>
                     <TouchableOpacity onPress={() => handleRemove(item.id)}>
                       <View style={styles.submiticon2}>
                         <AntDesign name="delete" size={25} color="white" />

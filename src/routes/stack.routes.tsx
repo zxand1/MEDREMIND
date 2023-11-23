@@ -5,8 +5,8 @@ import RegisteredPage from "../screens/RegisteredPage";
 import HistoricPage from "../screens/HistoricPage";
 import NewRegistrationPage from "../screens/NewRegistrationPage";
 import ProgramPage from "../screens/ProgramPage";
-import Teste from "../screens/Teste/teste";
-
+import Registro from "../screens/Registro/Registro";
+import Registrosintomas from "../screens/RegistroSintomas/Registrosintomas";
 const Stack = createNativeStackNavigator();
 export default function StackRoutes() {
     return (
@@ -41,8 +41,12 @@ export default function StackRoutes() {
             />
 
             <Stack.Screen
-                name="Teste"
-                component={Teste}
+                name="Registro"
+                component={Registro}
+            />
+            <Stack.Screen
+                name="Registrosintomas"
+                component={Registrosintomas}
             />
         </Stack.Navigator>
  

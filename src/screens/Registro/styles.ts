@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         marginTop: 5,
         color: 'black',
-        height: 40
+        height: 'auto'
     },
     select:{
         height:40,
@@ -78,17 +78,18 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 20,
         maxWidth: 'auto',
-        marginVertical: 25,
+        marginVertical: 75,
         height: 550,
         
     },
  
     submitBtn: {
         borderRadius: 18,
-        marginTop: 0,
-        marginBottom: 12,
-        paddingTop: 18
-        
+        marginTop: "40%",  
+    },
+    submitBtn2: {
+        borderRadius: 18,
+        marginTop: "5%",  
     },
     submitBtnBackground: {
         width: 325,

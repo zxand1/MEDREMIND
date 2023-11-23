@@ -11,15 +11,15 @@ import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async
 import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
 import  navigation from 'react-native-navigation';
-import Teste from '../Teste/teste';
+import Registro from '../Registro/Registro';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 
 
 
 export default function ProgramPage({ navigation }) {
-  const Teste = () => {
-    navigation.navigate("Teste")
+  const Registro = () => {
+    navigation.navigate("Registro")
   }
 
   const [data, setData] = useState<CardProps[]>([]);
@@ -32,7 +32,7 @@ export default function ProgramPage({ navigation }) {
         id: id,
         medname: item.medname, // Você pode ajustar isso para o nome real do medicamento
         tipo: item.tipo, // Você pode ajustar isso para o tipo real do medicamento
-        hora: item.hora, // Você pode ajustar isso para a hora real do medicamento
+        time: item.time, // Você pode ajustar isso para a hora real do medicamento
       };
 
       // Obter dados anteriores do histórico
@@ -75,7 +75,8 @@ export default function ProgramPage({ navigation }) {
     id: string;
     medname: string;
     tipo: string;
-    hora: string;
+    time: string;
+    hora:string;
   };
 
   return (
@@ -119,7 +120,7 @@ export default function ProgramPage({ navigation }) {
                         <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                       </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={Teste}>
+                    <TouchableOpacity onPress={Registro}>
                       <View style={styles.submiticon}>
                         <Ionicons name="add-circle-sharp" size={30} color="white" />
                       </View>

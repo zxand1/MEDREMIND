@@ -48,58 +48,79 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         maxWidth: 'auto',
         marginVertical: 25,
-        height: 550,
+        height: "90%",
     },
-    submitBtn: {
-        borderRadius: 18,
-        marginBottom: 15,
-        paddingTop: 10,
-        width:"auto",
-        height:80,  
-    },
+    
     submitBtnBackground: {
         width: '100%',
-        height : 70,
+        height: 'auto',
         borderRadius: 25,
-        padding: 5,
+        top: 5,
+        padding: 2,
+        marginBottom: 10
     },
     text1: {
         color: "white",
-        fontWeight: "800",
-        fontSize: 18,
-        lineHeight: 20,
-        padding:5,
-        position:'relative',
-        textAlign:'center',
+        fontWeight: "500",
+        top:5,
+        fontSize: 15,
+        lineHeight: 15,
+        maxWidth:"75%",
+        left: 15,
         bottom: 5,
+        marginBottom:5
     },
     text2: {
         color: "white",
         fontWeight: "600",
-        fontSize: 15,
+        fontSize: 13,
         lineHeight: 20,
-        padding:5,
-        position:'relative',
-        textAlign:'center',
-        bottom: 10
+        left: 15,
+        bottom: 7,
+        top:5,
     },
-    submiticon2:{
-        left:'85%',
-        bottom:25,
-        position:'absolute',
+    text3: {
+        color: "white",
+        fontWeight: "600",
+        fontSize: 13,
+        lineHeight: 20,
+        left: 15,
+        top:5,
+        bottom: 11,
     },
-    submiticon:{
-        right:'85%',
-        bottom:25,
-        position:'absolute',
+    
+    submiticon2: {
+        left: '85%',
+        position: 'absolute',
+        bottom:"100%"
     },
-    button: {
-        width: '100%',
-        height: 40,
-        backgroundColor: 'white',
+    
+    submitBtn:{
         borderRadius: 18,
-        justifyContent: 'center',
-        alignItems: 'center',
+        textAlign:'center',
+        padding:5,
+        
+          
+    },
+    submitText: {
+        color: "white",
+        textAlign: "center",
+        fontWeight: "600",
+        fontSize: 20,
+        marginTop: 10,
+        bottom:5
+    },
+    button:{
+        width:'100%',
+        height:'auto',
+
+        borderRadius:10,
+        justifyContent:'center',
+        alignItems:'center',
+      },
+      submitBtn2: {
+        borderRadius: 18,
+        marginTop: "95%",  
     },
 });
 
