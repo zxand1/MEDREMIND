@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height : 70,
         borderRadius: 25,
-        top: 5,
         padding: 2
     },
     text1: {
