@@ -3,8 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: "column",
-        justifyContent: "flex-start",
         paddingHorizontal: 12,
         paddingVertical: 150,
     },
@@ -15,7 +13,6 @@ export const styles = StyleSheet.create({
     imageMedical: {
         height:'0%',
         width:'50%',
-        right: 100,
         top:20,
         position:'absolute',
         
