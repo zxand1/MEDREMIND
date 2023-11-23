@@ -49,7 +49,7 @@ export default function ProgramPage({ navigation }) {
 
       Toast.show({
         type: 'success',
-        text1: 'Cadastrado com sucesso!',
+        text1: 'Medicamento utilizado!',
       });
     } catch (error) {
       console.log(error);
