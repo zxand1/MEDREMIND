@@ -3,7 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from 'react-native-animatable'
-import { AntDesign } from '@expo/vector-icons';
+
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+
 import styles from "./styles";
 import React, { useState , useEffect,useCallback } from 'react';
 import {useFocusEffect} from "@react-navigation/native"
@@ -82,11 +85,16 @@ export default function RegisteredPage() {
                   <Text style={styles.text1}>Medicação: {item.medname}</Text>
                   <Text style={styles.text2}>Tipo: {item.tipo}</Text>
                   <Text style={styles.text3}>Intervalo: {item.hora} em {item.hora} horas</Text>
+                  <TouchableOpacity>
+                    <View style={styles.submiticon1}>
+                      <Feather name="edit" size={20} color="white"/>
+                    </View>
+                  </TouchableOpacity>
                   <TouchableOpacity onPress={()=> handleRemove(item.id)}>
-                  <View style={styles.submiticon2}>
-                      <AntDesign name="delete" size={25} color="white" />
-                  </View>
-                      </TouchableOpacity>           
+                    <View style={styles.submiticon2}>
+                    <FontAwesome5 name="trash" size={20} color="white" />
+                    </View>
+                  </TouchableOpacity>           
                 </View>
         </LinearGradient>
 )
