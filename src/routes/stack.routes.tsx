@@ -5,44 +5,47 @@ import RegisteredPage from "../screens/RegisteredPage";
 import HistoricPage from "../screens/HistoricPage";
 import NewRegistrationPage from "../screens/NewRegistrationPage";
 import ProgramPage from "../screens/ProgramPage";
-const { Screen, Navigator } = createNativeStackNavigator();
+import Teste from "../screens/Teste/teste";
 
+const Stack = createNativeStackNavigator();
 export default function StackRoutes() {
     return (
-        <Navigator
+        <Stack.Navigator
             screenOptions={{
                 headerShown: false,
             }}
             >
-                <Screen
+                <Stack.Screen
                 name="Tabnavigation"
                 component={Tabnavigation}
             />
-            <Screen
+            <Stack.Screen
                 name="ProgramPage"
                 component={ProgramPage}
             />
-            <Screen
+            <Stack.Screen
                 name="RegisteredPage"
                 component={RegisteredPage}
             />
-            <Screen
+            <Stack.Screen
                 name="ConfigPage"
                 component={ConfigPage}
             />
-            <Screen
+            <Stack.Screen
                 name="HistoricPage"
                 component={HistoricPage}
             />
-            <Screen
+            <Stack.Screen
                 name="NewRegistrationPage"
                 component={NewRegistrationPage}
             />
-        </Navigator>
 
-
-
-
-    );
-
+            <Stack.Screen
+                name="Teste"
+                component={Teste}
+            />
+        </Stack.Navigator>
+ 
+ );
 }
+

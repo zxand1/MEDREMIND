@@ -4,14 +4,24 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
-import {useFocusEffect} from "@react-navigation/native"
+import { useFocusEffect } from "@react-navigation/native"
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
+import  navigation from 'react-native-navigation';
+import Teste from '../Teste/teste';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function ProgramPage() {
+
+
+
+export default function ProgramPage({ navigation }) {
+  const Teste = () => {
+    navigation.navigate("Teste")
+  }
+
   const [data, setData] = useState<CardProps[]>([]);
   const { getItem, setItem } = useAsyncStorage('@medremind:ingeridos');
 
@@ -57,7 +67,7 @@ export default function ProgramPage() {
     setData(data);
   }
 
-  useFocusEffect(useCallback(()=>{
+  useFocusEffect(useCallback(() => {
     handleFetchData();
   }, []));
 
@@ -109,7 +119,7 @@ export default function ProgramPage() {
                         <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                       </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => null}>
+                    <TouchableOpacity onPress={Teste}>
                       <View style={styles.submiticon}>
                         <Ionicons name="add-circle-sharp" size={30} color="white" />
                       </View>
