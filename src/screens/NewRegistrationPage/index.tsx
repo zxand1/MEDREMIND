@@ -134,7 +134,6 @@ export default function NewRegistrationPage() {
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
-                
                 placeholder= {  { label: 'Selecione o intervalo', value: null, }}
                 onValueChange={(setHora)}
                 items={[

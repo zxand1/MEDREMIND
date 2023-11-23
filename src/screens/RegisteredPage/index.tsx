@@ -51,8 +51,7 @@ export default function RegisteredPage() {
     style={styles.imageBackground}
   >
     <StatusBar style="light" />
-    <SafeAreaView style={styles.container}>
-     
+    <SafeAreaView style={styles.container}>    
        <View style={styles.logoTitle}>
        <Animatable.Image
         source={require("../../../assets/images/logo.png")}
@@ -60,38 +59,36 @@ export default function RegisteredPage() {
         animation="rotate"
         iterationCount="infinite"
         duration={3800}
-        direction="alternate-reverse"
-        
+        direction="alternate-reverse"   
       />
         <Text style={styles.logoText}>Med</Text>
         <Text style={styles.logoText}>Remind</Text>
       </View>
       <View style={styles.form}>
         <Text style={styles.title}>Medicamentos Cadastrados:</Text>
-      
-
       <FlatList
-      
   data={data}
   style={{marginTop:5}}
   contentContainerStyle={{marginHorizontal:20}}
   keyExtractor={(item) => item.id}
   renderItem={({item}) => {
     return(
-      <View  style={styles.submitBtn}>
-        <Text style={styles.text}>Nome: {item.medname}</Text>
-        <Text style={styles.text}>Tipo: {item.tipo}</Text>
-        <Text style={styles.text}>Intervalo: {item.hora} em {item.hora} horas</Text>
-        <TouchableOpacity onPress={()=> handleRemove(item.id)}>
-        <View style={styles.submiticon2}>
-             <AntDesign name="delete" size={30} color="red" />
-        </View>
-        
-            </TouchableOpacity>
-        
-       
-      </View>
-  
+      <LinearGradient
+                colors={["#110e9d", "#2e84c1"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.submitBtnBackground}>
+          <View  style={styles.submitBtn}>
+            <Text style={styles.text1}>Medicação: {item.medname}</Text>
+            <Text style={styles.text2}>Tipo: {item.tipo}</Text>
+            <Text style={styles.text2}>Intervalo: {item.hora} em {item.hora} horas</Text>
+            <TouchableOpacity onPress={()=> handleRemove(item.id)}>
+            <View style={styles.submiticon2}>
+                <AntDesign name="delete" size={25} color="white" />
+            </View>
+                </TouchableOpacity>           
+          </View>
+        </LinearGradient>
 )
 }}
 ></FlatList>

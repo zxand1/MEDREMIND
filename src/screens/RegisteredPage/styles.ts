@@ -54,29 +54,35 @@ const styles = StyleSheet.create({
         borderRadius: 18,
         marginBottom: 15,
         paddingTop: 10,
-        width:"auto",
-        height:80,
-        backgroundColor:'blue',
-        
-        
+        width:"100%",
+        height:70,
     },
     submitBtnBackground: {
         width: '100%',
-        height : 60,
+        height : 70,
         borderRadius: 25,
-        padding: 5,
+        top: 5,
+        padding: 2
     },
-    text: {
+    text1: {
+        color: "white",
+        fontWeight: "800",
+        fontSize: 18,
+        lineHeight: 20,
+        left:15,
+        bottom: 5,
+    },
+    text2: {
         color: "white",
         fontWeight: "600",
-        fontSize: 15,
+        fontSize: 13,
         lineHeight: 20,
-        left:10
-
+        left:15,
+        bottom: 7
     },
     submiticon2:{
         left:'85%',
-        bottom:10,
+        bottom: 8,
         position:'absolute',
     },
     button: {
