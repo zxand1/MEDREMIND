@@ -130,7 +130,6 @@ export default function NewRegistrationPage() {
               value={medname}
               onChangeText={(setmedname)}
               placeholder="Digite o nome do medicamento"
-
             />
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
@@ -164,6 +163,10 @@ export default function NewRegistrationPage() {
                 timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             {/* Campo de Hora */}
             <TouchableOpacity
               onPress={() => setShowTimePicker(true)}
