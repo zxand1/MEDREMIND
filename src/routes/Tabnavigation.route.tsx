@@ -50,7 +50,7 @@ export default function Tabnavigation() {
         options={{
           title: '',
           headerTransparent: true,
-          headerShown: false,
+          headerShown: true,
           tabBarLabel: 'Novo Registro',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-add-circle-outline" size={size} color={color} />

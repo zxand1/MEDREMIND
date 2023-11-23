@@ -30,11 +30,7 @@ export default function ProgramPage() {
 
   useFocusEffect(useCallback(()=>{
     handleFetchData();
-  }, []));
-
- 
-   
- 
+  }, [])); 
 
    type CardProps = {
     id: string;
@@ -72,16 +68,20 @@ export default function ProgramPage() {
         <Text style={styles.title}>Medicamentos Programados:</Text>
       
 
-      <FlatList
-      
+      <FlatList      
   data={data}
   style={{marginTop:5}}
   contentContainerStyle={{marginHorizontal:20}}
   keyExtractor={(item) => item.id}
   renderItem={({item}) => {
     return(
+      <LinearGradient
+                colors={["#110e9d", "#2e84c1"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.submitBtnBackground}>
       <View  style={styles.submitBtn}>
-        <Text style={styles.text}>{item.medname}</Text>
+        <Text style={styles.text1}>{item.medname}</Text>
         <Text style={styles.text2}>Intervalo: {item.hora} em {item.hora} horas</Text>
         <TouchableOpacity onPress={() => (null)}>
         <View style={styles.submiticon2}>
@@ -93,10 +93,9 @@ export default function ProgramPage() {
                     <View style={styles.submiticon}>
                       <Ionicons name="add-circle-sharp" size={30} color="white" />
                     </View>
-                  </TouchableOpacity>
-       
+                  </TouchableOpacity>       
       </View>
-  
+    </LinearGradient>
 )
 }}
 ></FlatList>

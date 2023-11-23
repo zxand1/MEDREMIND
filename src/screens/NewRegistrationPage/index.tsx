@@ -17,7 +17,7 @@ import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/dat
 import styles from './styles';
 import uuid from 'react-uuid';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
-import Toast from 'react-native-toast-message';
+import Toast from "react-native-toast-message";
 import { FaAlignCenter } from 'react-icons/fa';
 
 export default function NewRegistrationPage() {
@@ -48,11 +48,10 @@ export default function NewRegistrationPage() {
 
       const data = [...previousData, newData];
 
-      await setItem( JSON.stringify(data));
-      console.log(data);
+      await setItem(JSON.stringify(data));
       Toast.show({
-        type:"sucess",
-        text1:"Cadastrado com sucesso!",
+        type: "success",
+        text1: "Cadastrado com sucesso!",
       })
     
   }
@@ -64,7 +63,7 @@ export default function NewRegistrationPage() {
       type:"error",
       text1:"não foi possível cadastrar."
       })
-  }}
+    }}
 
   const handleDateChange = (event: DateTimePickerEvent, date?: Date) => {
     if (date !== undefined) {
@@ -135,7 +134,6 @@ export default function NewRegistrationPage() {
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
-                
                 placeholder= {  { label: 'Selecione o intervalo', value: null, }}
                 onValueChange={(setHora)}
                 items={[
