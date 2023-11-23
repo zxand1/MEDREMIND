@@ -55,6 +55,7 @@ export default function NewRegistrationPage() {
       })
     
   }
+  
     catch(error){
       console.log(error);
 
