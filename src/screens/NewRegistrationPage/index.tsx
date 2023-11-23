@@ -49,18 +49,18 @@ export default function NewRegistrationPage() {
       const data = [...previousData, newData];
 
       await setItem( JSON.stringify(data));
+      console.log(data);
       Toast.show({
-        type: "sucess",
-        text1: "Cadastrado com sucesso!",
+        type:"sucess",
+        text1:"Cadastrado com sucesso!",
       })
     
-  }
-    catch(error){
-      console.log(error);
+  }catch(error){  
+    console.log(error);
 
-      Toast.show({
-        type:"error",
-        text1:"não foi possível cadastrar."
+    Toast.show({
+      type:"error",
+      text1:"não foi possível cadastrar."
       })
   }}
 
