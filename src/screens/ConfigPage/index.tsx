@@ -8,9 +8,12 @@ import styles from "./styles";
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import Registrosintomas from "../RegistroSintomas/Registrosintomas";
 import ProgramPage from "../ProgramPage";
-export default function ConfigPage() {
-
+export default function ConfigPage({ navigation }) {
+  const Registrosintomas = () => {
+    navigation.navigate("Registrosintomas")
+  }
   return (
     <ImageBackground
       source={require("../../../assets/images/wallpaper.png")}
@@ -36,7 +39,7 @@ export default function ConfigPage() {
             <Text style={styles.title}>Configurações:</Text>
             <View style={styles.submitBtn}>
               <TouchableOpacity style={styles.button}
-                onPress={() => ConfigPage()}  >
+                onPress={() => (null)}  >
                 <View style={styles.submiticon}>
                   <Ionicons name="notifications" size={24} color="black" />
                 </View>
@@ -45,7 +48,7 @@ export default function ConfigPage() {
             </View>
             <View style={styles.submitBtn}>
               <TouchableOpacity style={styles.button}
-                onPress={() => ConfigPage()}  >
+                onPress={() => Registrosintomas()}  >
                 <View style={styles.submiticon}>
                   <FontAwesome name="paint-brush" size={24} color="black" />
                 </View>

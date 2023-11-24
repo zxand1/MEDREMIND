@@ -10,6 +10,7 @@ export declare global{
             RegisteredPage: undefined;
             ConfigPage:undefined;
             HistoricPage:undefined;
+            
         }
     }
 }

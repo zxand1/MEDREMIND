@@ -35,7 +35,7 @@ export default function HistoricPage() {
     id: string;
     medname: string,
     tipo: string,
-    hora: string,
+    time: string,
   }
 
   return (

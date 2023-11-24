@@ -6,6 +6,9 @@ import HistoricPage from "../screens/HistoricPage";
 import NewRegistrationPage from "../screens/NewRegistrationPage";
 import ProgramPage from "../screens/ProgramPage";
 import AuthPage from "../screens/AuthPage/AuthPage";
+import Registro from "../screens/Registro/Registro";
+import Registrosintomas from "../screens/RegistroSintomas/Registrosintomas";
+
 
 const Stack = createNativeStackNavigator();
 export default function StackRoutes() {

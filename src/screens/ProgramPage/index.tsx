@@ -4,14 +4,24 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
-import {useFocusEffect} from "@react-navigation/native"
+import { useFocusEffect } from "@react-navigation/native"
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
+import  navigation from 'react-native-navigation';
+import Registro from '../Registro/Registro';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function ProgramPage() {
+
+
+
+export default function ProgramPage({ navigation }) {
+  const Registro = () => {
+    navigation.navigate("Registro")
+  }
+
   const [data, setData] = useState<CardProps[]>([]);
   const { getItem, setItem } = useAsyncStorage('@medremind:ingeridos');
 
@@ -22,7 +32,7 @@ export default function ProgramPage() {
         id: id,
         medname: item.medname, // Você pode ajustar isso para o nome real do medicamento
         tipo: item.tipo, // Você pode ajustar isso para o tipo real do medicamento
-        hora: item.hora, // Você pode ajustar isso para a hora real do medicamento
+        time: item.time, // Você pode ajustar isso para a hora real do medicamento
       };
 
       // Obter dados anteriores do histórico
@@ -39,7 +49,7 @@ export default function ProgramPage() {
 
       Toast.show({
         type: 'success',
-        text1: 'Cadastrado com sucesso!',
+        text1: 'Medicamento utilizado!',
       });
     } catch (error) {
       console.log(error);
@@ -57,7 +67,7 @@ export default function ProgramPage() {
     setData(data);
   }
 
-  useFocusEffect(useCallback(()=>{
+  useFocusEffect(useCallback(() => {
     handleFetchData();
   }, []));
 
@@ -65,7 +75,8 @@ export default function ProgramPage() {
     id: string;
     medname: string;
     tipo: string;
-    hora: string;
+    time: string;
+    hora:string;
   };
 
   return (
@@ -109,7 +120,7 @@ export default function ProgramPage() {
                         <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                       </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => null}>
+                    <TouchableOpacity onPress={Registro}>
                       <View style={styles.submiticon}>
                         <Ionicons name="add-circle-sharp" size={30} color="white" />
                       </View>
