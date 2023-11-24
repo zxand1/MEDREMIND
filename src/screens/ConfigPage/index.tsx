@@ -46,6 +46,17 @@ export default function ConfigPage({ navigation }) {
                 <Text style={styles.text}>Notificações</Text>
               </TouchableOpacity>
             </View>
+
+            <View style={styles.submitBtn}>
+              <TouchableOpacity style={styles.button}
+                onPress={() => Registrosintomas()}  >
+                <View style={styles.submiticon}>
+                <Ionicons name="ios-add-circle-outline" size={24} color={"black"} />
+                </View>
+                <Text style={styles.text}>Registros de sintomas</Text>
+              </TouchableOpacity>
+            </View>
+
             <View style={styles.submitBtn}>
               <TouchableOpacity style={styles.button}
                 onPress={() => Registrosintomas()}  >

@@ -46,6 +46,14 @@ export default function StackRoutes() {
                 name="NewRegistrationPage"
                 component={NewRegistrationPage}
             />
+            <Stack.Screen
+                name="Registro"
+                component={Registro}
+            />
+            <Stack.Screen
+                name="Registrosintomas"
+                component={Registrosintomas}
+            />
 
         </Stack.Navigator>
  

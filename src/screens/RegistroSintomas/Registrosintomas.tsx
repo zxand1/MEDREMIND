@@ -72,7 +72,7 @@ export default function Registrosintomas({navigation}) {
       </View>
       <View style={styles.form}>
         <Text style={styles.title}>Sintomas Cadastrados:</Text>
-        <ScrollView>  
+          
       <FlatList
       
   data={data}
@@ -118,7 +118,7 @@ export default function Registrosintomas({navigation}) {
               </TouchableOpacity>
             </View>
 
-            </ScrollView>
+            
             
     </View>
     
