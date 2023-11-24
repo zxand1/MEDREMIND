@@ -54,7 +54,6 @@ export default function StackRoutes() {
                 name="Registrosintomas"
                 component={Registrosintomas}
             />
-
         </Stack.Navigator>
  
  );
