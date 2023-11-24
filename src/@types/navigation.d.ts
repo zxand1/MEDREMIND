@@ -10,6 +10,8 @@ export declare global{
             RegisteredPage: undefined;
             ConfigPage:undefined;
             HistoricPage:undefined;
+            Registro:undefined;
+            Registrosintomas:undefined;
             
         }
     }

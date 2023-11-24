@@ -1,31 +1,20 @@
 import React, { useState } from 'react';
-import {
-  Text,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-  TextInput,
-  ScrollView,
-  Platform,
-  BackHandler,
-} from 'react-native';
+import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Platform} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
-import RNPickerSelect from 'react-native-picker-select';
 import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import styles from './styles';
 import uuid from 'react-uuid';
-import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from "react-native-toast-message";
-import { FaAlignCenter } from 'react-icons/fa';
-import ProgramPage from '../ProgramPage';
 
-export default function Registro({navigation}) {
-  const Tabnavigation = () => {
-    navigation.navigate("Tabnavigation")
-  }
+export default function Registro() {
+
+  const navigation = useNavigation();
+  
 
   const [time, setSelectedTime] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
@@ -154,10 +143,7 @@ export default function Registro({navigation}) {
                 onChange={handleTimeChange}
                 timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
-            )}
-
-            
-           
+            )}   
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
@@ -176,7 +162,10 @@ export default function Registro({navigation}) {
             <View style={styles.submitBtn2}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={Tabnavigation}
+                onPress={() =>{
+                  navigation.navigate('Tabnavigation')
+                }
+              }
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}

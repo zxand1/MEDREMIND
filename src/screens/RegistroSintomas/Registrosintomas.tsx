@@ -9,14 +9,13 @@ import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 import React, { useState , useEffect,useCallback } from 'react';
-import {useFocusEffect} from "@react-navigation/native"
+import {useFocusEffect, useNavigation} from "@react-navigation/native"
 import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 
 
-export default function Registrosintomas({navigation}) {
-  const Tabnavigation = () => {
-    navigation.navigate("Tabnavigation")
-  }
+export default function Registrosintomas() {
+  
+  const navigation = useNavigation();
 
   const [data, setData]= useState<CardProps[]>([]);
   const { getItem, setItem} = useAsyncStorage("@medremind:registro");
@@ -49,7 +48,6 @@ export default function Registrosintomas({navigation}) {
     onPress:()=> void;
   }
   
-
   
   return (
     <ImageBackground
@@ -105,7 +103,10 @@ export default function Registrosintomas({navigation}) {
 <View style={styles.submitBtn2}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={Tabnavigation}
+                onPress={() => { 
+                  navigation.navigate('Tabnavigation')
+                 }
+                }
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}

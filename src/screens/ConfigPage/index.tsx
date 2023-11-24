@@ -1,19 +1,16 @@
 import { useState } from "react";
-import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Image } from "react-native";
+import { Text, View, ImageBackground, TouchableOpacity, ScrollView  } from "react-native";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable'
 import styles from "./styles";
-import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Registrosintomas from "../RegistroSintomas/Registrosintomas";
-import ProgramPage from "../ProgramPage";
-export default function ConfigPage({ navigation }) {
-  const Registrosintomas = () => {
-    navigation.navigate("Registrosintomas")
-  }
+import { useNavigation } from "@react-navigation/native";
+export default function ConfigPage() {
+  
+  const navigation = useNavigation();
   return (
     <ImageBackground
       source={require("../../../assets/images/wallpaper.png")}
@@ -49,7 +46,7 @@ export default function ConfigPage({ navigation }) {
 
             <View style={styles.submitBtn}>
               <TouchableOpacity style={styles.button}
-                onPress={() => Registrosintomas()}  >
+                onPress={() => navigation.navigate('Registrosintomas')}  >
                 <View style={styles.submiticon}>
                 <Ionicons name="ios-add-circle-outline" size={24} color={"black"} />
                 </View>
