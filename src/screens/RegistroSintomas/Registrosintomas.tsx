@@ -92,7 +92,7 @@ export default function Registrosintomas({navigation}) {
                   
                   <TouchableOpacity onPress={()=> handleRemove(item.id)}>
                     <View style={styles.submiticon2}>
-                    <FontAwesome5 name="trash" size={20} color="black" />
+                    <FontAwesome5 name="trash" size={20} color="white" />
                     </View>
                   </TouchableOpacity>           
                 </View>
