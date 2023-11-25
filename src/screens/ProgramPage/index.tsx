@@ -11,7 +11,7 @@ import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async
 import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
 import  navigation from 'react-native-navigation';
-import Registro from '../Registro/Registro';
+import Registro from '../Registro';
 
 
 

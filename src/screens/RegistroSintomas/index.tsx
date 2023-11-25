@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
-import { useFocusEffect } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 import { Text, View, ImageBackground, FlatList, TouchableOpacity } from "react-native";
@@ -11,24 +11,31 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import styles from "./styles";
 
-export default function HistoricPage() {
-  const [historyData, sethistoryData] = useState<CardProps[]>([]);
-  const { getItem, setItem } = useAsyncStorage("@medremind:ingeridos");
+type CardProps = {
+  id: string;
+  registro: string;
+  date: string;
+};
+
+export default function Registrosintomas() {
+  const navigation = useNavigation();
+
+  const [data, setData] = useState<CardProps[]>([]);
+  const { getItem, setItem } = useAsyncStorage("@medremind:registro");
 
   async function handleFetchData() {
     const response = await getItem();
-    sethistoryData(response ? JSON.parse(response) : []);
+
+    setData(response ? JSON.parse(response) : []);
   }
 
   async function handleRemove(id: string) {
     const response = await getItem();
-    const previoushistoryData = response ? JSON.parse(response) : [];
-    const newhistoryData = previoushistoryData.filter(
-      (item: CardProps) => item.id !== id
-    );
+    const previousData = response ? JSON.parse(response) : [];
+    const newData = previousData.filter((item: CardProps) => item.id !== id);
 
-    setItem(JSON.stringify(newhistoryData));
-    sethistoryData(newhistoryData);
+    setItem(JSON.stringify(data));
+    setData(newData);
   }
 
   useFocusEffect(
@@ -36,14 +43,6 @@ export default function HistoricPage() {
       handleFetchData();
     }, [])
   );
-
-  type CardProps = {
-    id: string;
-    medname: string;
-    tipo: string;
-    time: string;
-    hora: string;
-  };
 
   return (
     <ImageBackground
@@ -65,11 +64,12 @@ export default function HistoricPage() {
           <Text style={styles.logoText}>Remind</Text>
         </View>
         <View style={styles.form}>
-          <Text style={styles.title}>Medicamentos Cadastrados:</Text>
+          <Text style={styles.title}>Sintomas Cadastrados:</Text>
+
           <FlatList
-            data={historyData}
-            style={{ marginTop: 10 }}
-            contentContainerStyle={{ gap: 10 }}
+            data={data}
+            style={{ marginTop: 5 }}
+            contentContainerStyle={{ marginHorizontal: 20 }}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => {
               return (
@@ -80,11 +80,9 @@ export default function HistoricPage() {
                   style={styles.submitBtnBackground}
                 >
                   <View style={styles.submitBtn}>
-                    <Text style={styles.text1}>Medicação: {item.medname}</Text>
-                    <Text style={styles.text2}>Tipo: {item.tipo}</Text>
-                    <Text style={styles.text2}>
-                      Intervalo: {item.hora} em {item.hora} horas
-                    </Text>
+                    <Text style={styles.text1}>Sitomas: {item.registro}</Text>
+                    <Text style={styles.text3}>Data {item.date} </Text>
+
                     <TouchableOpacity onPress={() => handleRemove(item.id)}>
                       <View style={styles.submiticon2}>
                         <FontAwesome5 name="trash" size={20} color="white" />
@@ -95,6 +93,24 @@ export default function HistoricPage() {
               );
             }}
           ></FlatList>
+
+          <View style={styles.submitBtn2}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                navigation.navigate("Tabnavigation");
+              }}
+            >
+              <LinearGradient
+                colors={["#110e9d", "#2e84c1"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.submitBtnBackground}
+              >
+                <Text style={styles.submitText}>Voltar</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     </ImageBackground>
