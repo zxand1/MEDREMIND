@@ -20,13 +20,13 @@ export default function Tabnavigation() {
       }}
     >
       <Tab.Screen
-        name="Cadastrados"
+        name="Remédios"
         component={RegisteredPage}
         options={{
           title: '',
           headerTransparent: true,
           headerShown: false,
-          tabBarLabel: 'Cadastrados',
+          tabBarLabel: 'Remédios',
           tabBarIcon: ({ color, size }) => (
             <FontAwesome5 name="pills" size={size} color={color} />
           ),
