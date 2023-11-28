@@ -8,7 +8,7 @@ import * as Animatable from "react-native-animatable";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import styles from "./styles";
-import Registrosintomas from "../RegistroSintomas";
+import Registrosintomas from "../SymptomsPage";
 
 export default function ConfigPage() {
   const navigation = useNavigation();
@@ -46,7 +46,7 @@ export default function ConfigPage() {
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate("Registrosintomas")}
+                onPress={() => navigation.navigate("Symptoms")}
               >
                 <View style={styles.submiticon}>
                   <Ionicons name="ios-add-circle-outline" size={24} color={"black"} />

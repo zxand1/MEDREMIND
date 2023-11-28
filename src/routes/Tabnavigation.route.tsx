@@ -8,7 +8,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import RegisteredPage from '../screens/RegisteredPage';
 import HistoricPage from '../screens/HistoricPage';
 import NewRegistrationPage from '../screens/NewRegistrationPage';
-import AuthPage from '../screens/AuthPage';
+
 const Tab = createBottomTabNavigator();
 
 export default function Tabnavigation() {

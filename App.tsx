@@ -39,11 +39,11 @@ export default function App() {
 async function schedulePushNotification() {
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "You've got mail! 📬",
-      body: "Here is the notification body",
+      title: "Med Remind 💊",
+      body: "Nunca esqueça de tomar seu remédio na hora certa!!!",
       data: { data: "goes here" },
     },
-    trigger: { seconds: 2 },
+    trigger: { seconds: 1, repeats: false },
   });
 }
 

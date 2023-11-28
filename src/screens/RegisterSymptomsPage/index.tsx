@@ -23,7 +23,7 @@ import uuid from "react-uuid";
 
 import styles from "./styles";
 
-export default function Registro() {
+export default function RegisterSymptoms() {
   const navigation = useNavigation();
 
   const [time, setSelectedTime] = useState(new Date());

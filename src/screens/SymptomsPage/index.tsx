@@ -17,7 +17,7 @@ type CardProps = {
   date: string;
 };
 
-export default function Registrosintomas() {
+export default function Symptoms() {
   const navigation = useNavigation();
 
   const [data, setData] = useState<CardProps[]>([]);

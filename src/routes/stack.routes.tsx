@@ -6,8 +6,8 @@ import HistoricPage from "../screens/HistoricPage";
 import NewRegistrationPage from "../screens/NewRegistrationPage";
 import ProgramPage from "../screens/ProgramPage";
 import AuthPage from "../screens/AuthPage";
-import Registro from "../screens/Registro";
-import Registrosintomas from "../screens/RegistroSintomas";
+import Symptoms from "../screens/SymptomsPage";
+import RegisterSymptoms from "../screens/RegisterSymptomsPage";
 import React from "react";
 
 const Stack = createNativeStackNavigator();
@@ -24,12 +24,9 @@ export default function StackRoutes() {
       <Stack.Screen name="RegisteredPage" component={RegisteredPage} />
       <Stack.Screen name="ConfigPage" component={ConfigPage} />
       <Stack.Screen name="HistoricPage" component={HistoricPage} />
-      <Stack.Screen
-        name="NewRegistrationPage"
-        component={NewRegistrationPage}
-      />
-      <Stack.Screen name="Registro" component={Registro} />
-      <Stack.Screen name="Registrosintomas" component={Registrosintomas} />
+      <Stack.Screen name="NewRegistrationPage"component={NewRegistrationPage}/>
+      <Stack.Screen name="RegisterSymptoms" component={RegisterSymptoms} />
+      <Stack.Screen name="Symptoms" component={Symptoms} />
     </Stack.Navigator>
   );
 }

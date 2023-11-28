@@ -10,8 +10,7 @@ import styles from './styles';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
-import  navigation from 'react-native-navigation';
-import Registro from '../Registro';
+import RegisterSymptoms from '../RegisterSymptomsPage';
 
 
 
@@ -123,7 +122,8 @@ export default function ProgramPage() {
                         <Ionicons name="checkmark-circle-sharp" size={30} color="white" />
                       </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={Registro}>
+                    <TouchableOpacity onPress={() => {navigation.navigate("RegisterSymptoms");
+              }}>
                       <View style={styles.submiticon}>
                         <Ionicons name="add-circle-sharp" size={30} color="white" />
                       </View>
