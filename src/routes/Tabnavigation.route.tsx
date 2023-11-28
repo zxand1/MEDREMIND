@@ -8,6 +8,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import RegisteredPage from '../screens/RegisteredPage';
 import HistoricPage from '../screens/HistoricPage';
 import NewRegistrationPage from '../screens/NewRegistrationPage';
+import EditMedicationPage from '../screens/EditMedicationPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -84,7 +85,6 @@ export default function Tabnavigation() {
           ),
         }}
       />
-
     </Tab.Navigator>
   );
 }

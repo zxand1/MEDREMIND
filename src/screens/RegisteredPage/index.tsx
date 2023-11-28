@@ -6,14 +6,16 @@ import * as Animatable from 'react-native-animatable'
 
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-
+import { useNavigation } from "@react-navigation/native"
 import styles from "./styles";
 import React, { useState , useEffect,useCallback } from 'react';
 import {useFocusEffect} from "@react-navigation/native"
 import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 
-
 export default function RegisteredPage() {
+
+  const navigation = useNavigation();
+
   const [data, setData]= useState<CardProps[]>([]);
   const { getItem, setItem} = useAsyncStorage("@medremind:medname");
   
@@ -85,7 +87,11 @@ export default function RegisteredPage() {
                   <Text style={styles.text1}>Medicação: {item.medname}</Text>
                   <Text style={styles.text2}>Tipo: {item.tipo}</Text>
                   <Text style={styles.text3}>Intervalo: {item.hora} em {item.hora} horas</Text>
-                  <TouchableOpacity>
+                  <TouchableOpacity 
+                  onPress={() => {
+                    navigation.navigate("EditMedicationPage");
+                  }}
+                  >
                     <View style={styles.submiticon1}>
                       <Feather name="edit" size={20} color="white"/>
                     </View>

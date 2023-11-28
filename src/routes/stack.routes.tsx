@@ -8,6 +8,7 @@ import ProgramPage from "../screens/ProgramPage";
 import AuthPage from "../screens/AuthPage";
 import Symptoms from "../screens/SymptomsPage";
 import RegisterSymptoms from "../screens/RegisterSymptomsPage";
+import EditMedicationPage from "../screens/EditMedicationPage";
 import React from "react";
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +28,7 @@ export default function StackRoutes() {
       <Stack.Screen name="NewRegistrationPage"component={NewRegistrationPage}/>
       <Stack.Screen name="RegisterSymptoms" component={RegisterSymptoms} />
       <Stack.Screen name="Symptoms" component={Symptoms} />
+      <Stack.Screen name="EditMedicationPage" component={EditMedicationPage} />
     </Stack.Navigator>
   );
 }
