@@ -65,7 +65,7 @@ export default function HistoricPage() {
           <Text style={styles.logoText}>Remind</Text>
         </View>
         <View style={styles.form}>
-          <Text style={styles.title}>Medicamentos Cadastrados:</Text>
+          <Text style={styles.title}>Historico de Medicamentos:</Text>
           <FlatList
             data={historyData}
             style={{ marginTop: 10 }}

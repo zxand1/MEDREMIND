@@ -81,8 +81,10 @@ const styles = StyleSheet.create({
     },
     submiticon2:{
         left:'85%',
-        bottom: 8,
+        bottom: 25,
         position:'absolute',
+        
+
     },
     button: {
         width: '100%',

@@ -33,7 +33,7 @@ export default function ConfigPage() {
         </View>
         <View style={styles.form}>
           <ScrollView>
-            <Text style={styles.title}>Configurações:</Text>
+            <Text style={styles.title}>Outros:</Text>
             <View style={styles.submitBtn}>
               <TouchableOpacity style={styles.button} onPress={() => null}>
                 <View style={styles.submiticon}>

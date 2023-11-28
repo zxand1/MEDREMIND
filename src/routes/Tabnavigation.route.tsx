@@ -79,7 +79,7 @@ export default function Tabnavigation() {
           title: '',
           headerTransparent: true,
           headerShown: false,
-          tabBarLabel: 'Configurações',
+          tabBarLabel: 'Outros',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="settings" size={size} color={color} />
           ),

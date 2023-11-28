@@ -81,8 +81,7 @@ export default function Symptoms() {
                 >
                   <View style={styles.submitBtn}>
                     <Text style={styles.text1}>Sitomas: {item.registro}</Text>
-                    <Text style={styles.text3}>Data {item.date} </Text>
-
+                    <Text style={styles.text3}>Data : {item.date} </Text>
                     <TouchableOpacity onPress={() => handleRemove(item.id)}>
                       <View style={styles.submiticon2}>
                         <FontAwesome5 name="trash" size={20} color="white" />

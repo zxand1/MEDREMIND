@@ -11,6 +11,7 @@ import uuid from 'react-uuid';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from "react-native-toast-message";
 import * as Notifications from 'expo-notifications';
+import { useNavigation } from "@react-navigation/native";
 
 
 Notifications.setNotificationHandler({
@@ -31,8 +32,6 @@ export default function NewRegistrationPage() {
   const [tipo, setTipo] = useState("");
 
   const { getItem, setItem } = useAsyncStorage("@medremind:medname");
-
-
 
   async function handleNew() {
     try {
@@ -143,9 +142,11 @@ export default function NewRegistrationPage() {
                 items={[
                   { label: '2 horas', value: '2' },
                   { label: '4 horas', value: '4' },
+                  { label: '6 horas', value: '6' },
                   { label: '8 horas', value: '8' },
                   { label: '10 horas', value: '10' },
                   { label: '12 horas', value: '12' },
+                  { label: '24 horas', value: '24' },
                 ]}
               />
             </View>
