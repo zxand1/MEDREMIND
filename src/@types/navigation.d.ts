@@ -11,7 +11,8 @@ export declare global{
             ConfigPage:undefined;
             HistoricPage:undefined;
             Symptoms:undefined;
-            RegisterSymptoms: undefined;    
+            RegisterSymptoms: undefined;
+            EditMedicationPage: undefined    
         }
     }
 }
