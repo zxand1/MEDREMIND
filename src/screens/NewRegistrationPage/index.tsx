@@ -25,15 +25,10 @@ export default function NewRegistrationPage() {
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [date, setSelectedDate] = useState(new Date());
-  const [errorDate, setErrorDate] = useState(null);
   const [time, setSelectedTime] = useState(new Date());
-  const [errorTime, setErrorTime] = useState(null);
   const [medname, setmedname] = useState("");
-  const [errorMedname, setErrorMedname] = useState(null);
   const [tipo, setTipo] = useState("");
-  const [errorTipo, setErrorTipo] = useState(null);
   const [intervalo, setIntervalo] = useState("");
-  const [errorIntervalo, setErrorIntervalo] = useState(null);
 
   const { getItem, setItem } = useAsyncStorage("@medremind:medname");
   const navigation = useNavigation();
@@ -192,7 +187,6 @@ export default function NewRegistrationPage() {
                 timeZoneOffsetInMinutes={Platform.OS === 'android' ? 0 : undefined}
               />
             )}
-            {/* Campo de Hora */}
             <TouchableOpacity
               onPress={() => setShowTimePicker(true)}
               style={styles.datePickerButton}
