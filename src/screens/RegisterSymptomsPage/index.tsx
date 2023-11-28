@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
-import DateTimePicker, {
-  DateTimePickerEvent,
-} from "@react-native-community/datetimepicker";
+import DateTimePicker, { DateTimePickerEvent } from "@react-native-community/datetimepicker";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import {
-  Text,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-  TextInput,
-  ScrollView,
-  Platform,
+import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Platform,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { SafeAreaView } from "react-native-safe-area-context";
