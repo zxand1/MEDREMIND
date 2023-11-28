@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Platform }from 'react-native';
+import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Platform, Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -13,7 +13,6 @@ import Toast from "react-native-toast-message";
 import * as Notifications from 'expo-notifications';
 import { useNavigation } from "@react-navigation/native";
 
-
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldPlaySound: true,
@@ -23,23 +22,44 @@ Notifications.setNotificationHandler({
 });
 
 export default function NewRegistrationPage() {
-  const [date, setSelectedDate] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
-  const [time, setSelectedTime] = useState(new Date());
   const [showTimePicker, setShowTimePicker] = useState(false);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [date, setSelectedDate] = useState(new Date());
+  const [errorDate, setErrorDate] = useState(null);
+  const [time, setSelectedTime] = useState(new Date());
+  const [errorTime, setErrorTime] = useState(null);
   const [medname, setmedname] = useState("");
-  const [hora, setHora] = useState("");
+  const [errorMedname, setErrorMedname] = useState(null);
   const [tipo, setTipo] = useState("");
+  const [errorTipo, setErrorTipo] = useState(null);
+  const [intervalo, setIntervalo] = useState("");
+  const [errorIntervalo, setErrorIntervalo] = useState(null);
 
   const { getItem, setItem } = useAsyncStorage("@medremind:medname");
+  const navigation = useNavigation();
 
   async function handleNew() {
+    if (!tipo) {
+      Alert.alert('Calma aí!', "Tipo de Medicamento não Preenchido");
+      return
+    }
+
+    if (!medname) {
+      Alert.alert('Calma aí!', "Nome do Medicamento não Preenchido");
+      return
+    }
+
+    if (!intervalo) {
+      Alert.alert('Calma aí!', "Intervalo não Preenchido");
+      return
+    }
+
     try {
       const id = uuid();
       const newData = {
         id,
         medname,
-        hora,
+        intervalo,
         tipo,
         date,
         time,
@@ -49,18 +69,21 @@ export default function NewRegistrationPage() {
       const previousData = response ? JSON.parse(response) : [];
 
       const data = [...previousData, newData];
-      console.log(data)
+
       await setItem(JSON.stringify(data));
+
       Toast.show({
         type: "success",
         text1: "Cadastrado com sucesso!",
       })
 
-    }
-
-    catch (error) {
+      setTipo("");
+      setmedname("");
+      setIntervalo("");
+      setSelectedDate(new Date());
+      setSelectedTime(new Date());
+    } catch (error) {
       console.log(error);
-
       Toast.show({
         type: "error",
         text1: "não foi possível cadastrar."
@@ -115,8 +138,9 @@ export default function NewRegistrationPage() {
             <Text style={styles.text}>Selecione o tipo de medicamento:</Text>
             <View style={styles.select}>
               <RNPickerSelect
+                value={tipo}
                 placeholder={{ label: 'Selecione o tipo', value: null }}
-                onValueChange={(setTipo)}
+                onValueChange={setTipo}
                 items={[
                   { label: 'Comprimidos', value: 'Comprimidos' },
                   { label: 'Dosagem', value: 'Dosagem' },
@@ -131,14 +155,15 @@ export default function NewRegistrationPage() {
               style={[
                 styles.formInput]}
               value={medname}
-              onChangeText={(setmedname)}
+              onChangeText={setmedname}
               placeholder="Digite o nome do medicamento"
             />
             <Text style={styles.text}>Selecione o intervalo entre doses:</Text>
             <View style={styles.select}>
               <RNPickerSelect
+                value={intervalo}
                 placeholder={{ label: 'Selecione o intervalo', value: null, }}
-                onValueChange={(setHora)}
+                onValueChange={setIntervalo}
                 items={[
                   { label: '2 horas', value: '2' },
                   { label: '4 horas', value: '4' },
@@ -187,7 +212,11 @@ export default function NewRegistrationPage() {
             <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={handleNew}
+                onPress={() => {
+                  handleNew();
+                  navigation.navigate("Tabnavigation");
+                }
+                }
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}

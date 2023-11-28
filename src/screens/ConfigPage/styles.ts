@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
  
     submitBtn: {
         borderRadius: 18,
-        marginTop: 40,
-        marginBottom: 12,
+        top: 10,
+        marginBottom: 20,
         
     },
     submitBtnBackground: {

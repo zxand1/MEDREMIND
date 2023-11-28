@@ -40,7 +40,7 @@ async function schedulePushNotification() {
   await Notifications.scheduleNotificationAsync({
     content: {
       title: "Med Remind 💊",
-      body: "Nunca esqueça de tomar seu remédio na hora certa!!!",
+      body: "Nunca esqueça de tomar seu remédio na hora certa!",
       data: { data: "goes here" },
     },
     trigger: { seconds: 1, repeats: false },
