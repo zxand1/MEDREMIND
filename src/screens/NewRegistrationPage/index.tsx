@@ -160,6 +160,7 @@ export default function NewRegistrationPage() {
                 placeholder={{ label: 'Selecione o intervalo', value: null, }}
                 onValueChange={setIntervalo}
                 items={[
+                  { label: '1 minutos', value: 1 * 60 },
                   { label: '2 horas', value: 2 * 3600 },
                   { label: '4 horas', value: 4 * 3600 },
                   { label: '6 horas', value: 6 * 3600 },
