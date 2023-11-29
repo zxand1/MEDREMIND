@@ -12,6 +12,17 @@ import React, { useState , useEffect,useCallback } from 'react';
 import {useFocusEffect} from "@react-navigation/native"
 import {useAsyncStorage} from '@react-native-async-storage/async-storage';
 
+type CardProps = {
+  id: string;
+  medname:string,
+  tipo:string,
+  hora:string,
+}
+type Props={
+  data: CardProps;
+  onPress:()=> void;
+}
+
 export default function RegisteredPage() {
 
   const navigation = useNavigation();
@@ -35,18 +46,6 @@ export default function RegisteredPage() {
   useFocusEffect(useCallback(()=>{
     handleFetchData();
   }, []));
- 
-
-   type CardProps = {
-    id: string;
-    medname:string,
-    tipo:string,
-    hora:string,
-  }
-  type Props={
-    data: CardProps;
-    onPress:()=> void;
-  }
   
 
   

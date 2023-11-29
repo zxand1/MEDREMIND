@@ -160,13 +160,13 @@ export default function NewRegistrationPage() {
                 placeholder={{ label: 'Selecione o intervalo', value: null, }}
                 onValueChange={setIntervalo}
                 items={[
-                  { label: '2 horas', value: '2' },
-                  { label: '4 horas', value: '4' },
-                  { label: '6 horas', value: '6' },
-                  { label: '8 horas', value: '8' },
-                  { label: '10 horas', value: '10' },
-                  { label: '12 horas', value: '12' },
-                  { label: '24 horas', value: '24' },
+                  { label: '2 horas', value: 2 * 3600 },
+                  { label: '4 horas', value: 4 * 3600 },
+                  { label: '6 horas', value: 6 * 3600 },
+                  { label: '8 horas', value: 8 * 3600 },
+                  { label: '10 horas', value: 10 * 3600 },
+                  { label: '12 horas', value: 12 * 3600 },
+                  { label: '24 horas', value: 24 * 3600 },
                 ]}
               />
             </View>
