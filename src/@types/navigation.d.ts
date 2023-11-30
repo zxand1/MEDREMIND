@@ -12,7 +12,8 @@ export declare global{
             HistoricPage:undefined;
             Symptoms:undefined;
             RegisterSymptoms: undefined;
-            EditMedicationPage: undefined    
+            EditMedicationPage: undefined;
+            HelpSupportPage: undefined;    
         }
     }
 }

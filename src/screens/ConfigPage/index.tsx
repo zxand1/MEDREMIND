@@ -55,12 +55,15 @@ export default function ConfigPage() {
               </TouchableOpacity>
             </View>
 
-            <View style={styles.submitBtn}>
-              <TouchableOpacity style={styles.button} onPress={() => Registrosintomas()}>
+              <View style={styles.submitBtn}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate("HelpSupportPage")}
+              >
                 <View style={styles.submiticon}>
-                  <FontAwesome name="paint-brush" size={24} color="black" />
+                  <FontAwesome name="question-circle" size={24} color="black" />
                 </View>
-                <Text style={styles.text}>Tema</Text>
+                <Text style={styles.text}>Ajuda / Suporte</Text>
               </TouchableOpacity>
             </View>
           </ScrollView>
