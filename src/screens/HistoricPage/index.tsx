@@ -43,6 +43,7 @@ export default function HistoricPage() {
     tipo: string;
     time: string;
     hora: string;
+    intervalo:string
   };
 
   return (
@@ -83,7 +84,7 @@ export default function HistoricPage() {
                     <Text style={styles.text1}>Medicação: {item.medname}</Text>
                     <Text style={styles.text2}>Tipo: {item.tipo}</Text>
                     <Text style={styles.text2}>
-                      Intervalo: {item.hora} em {item.hora} horas
+                      Intervalo: {item.intervalo} em {item.intervalo} horas
                     </Text>
                     <TouchableOpacity onPress={() => handleRemove(item.id)}>
                       <View style={styles.submiticon2}>

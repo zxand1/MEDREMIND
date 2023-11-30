@@ -12,6 +12,15 @@ import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
 import RegisterSymptoms from '../RegisterSymptomsPage';
 
+type CardProps = {
+  id: string;
+  medname: string;
+  tipo: string;
+  time: string;
+  hora: string;
+  notificationId: string;
+  intervalo:string // Adicione esta linha
+};
 
 
 
@@ -29,7 +38,8 @@ export default function ProgramPage() {
         id: id,
         medname: item.medname, // Você pode ajustar isso para o nome real do medicamento
         tipo: item.tipo, // Você pode ajustar isso para o tipo real do medicamento
-        time: item.time, // Você pode ajustar isso para a hora real do medicamento
+        time: item.time,
+        intervalo: item.intervalo // Você pode ajustar isso para a hora real do medicamento
       };
 
       // Obter dados anteriores do histórico
@@ -58,6 +68,12 @@ export default function ProgramPage() {
     }
   }
 
+  async function cancelNotification(notificationId: string) {
+    // Aqui você pode adicionar lógica para cancelar a notificação
+    // Certifique-se de utilizar a biblioteca ou API que você está usando para notificações
+    console.log(`Cancelando notificação com ID: ${notificationId}`);
+  }
+
   async function handleFetchData() {
     const response = await AsyncStorage.getItem('@medremind:medname');
     const data = response ? JSON.parse(response) : [];
@@ -68,13 +84,6 @@ export default function ProgramPage() {
     handleFetchData();
   }, []));
 
-  type CardProps = {
-    id: string;
-    medname: string;
-    tipo: string;
-    time: string;
-    hora:string;
-  };
 
   return (
     <ImageBackground
@@ -111,11 +120,12 @@ export default function ProgramPage() {
                   style={styles.submitBtnBackground}>
                   <View style={styles.submitBtn}>
                     <Text style={styles.text1}>{item.medname}</Text>
-                    <Text style={styles.text2}>Intervalo: {item.hora} em {item.hora} horas</Text>
+                    <Text style={styles.text2}>Intervalo: {item.intervalo} em {item.intervalo} horas</Text>
                     <TouchableOpacity 
                     onPress={() =>{
                       navigation.navigate('Tabnavigation'); 
                       handleNew(item);
+                      cancelNotification(item.notificationId);
                       }
                     }>
                       <View style={styles.submiticon2}>

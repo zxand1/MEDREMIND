@@ -86,14 +86,9 @@ const styles = StyleSheet.create({
         left: 15,
         bottom: 11,
     },
-    submiticon1: {
-        left: '85%',
-        bottom: 40,
-        position: 'absolute',
-    },
     submiticon2: {
         left: '85%',
-        bottom: 10,
+        bottom: 25,
         position: 'absolute',
     },
     button: {

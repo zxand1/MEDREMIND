@@ -17,6 +17,7 @@ type CardProps = {
   medname:string,
   tipo:string,
   hora:string,
+  intervalo:string,
 }
 type Props={
   data: CardProps;
@@ -85,15 +86,11 @@ export default function RegisteredPage() {
                   <View  style={styles.submitBtn}>
                   <Text style={styles.text1}>Medicação: {item.medname}</Text>
                   <Text style={styles.text2}>Tipo: {item.tipo}</Text>
-                  <Text style={styles.text3}>Intervalo: {item.hora} em {item.hora} horas</Text>
+                  <Text style={styles.text3}>Intervalo: {item.intervalo} em {item.intervalo} horas</Text>
                   <TouchableOpacity 
                   onPress={() => {
                     navigation.navigate("EditMedicationPage");
-                  }}
-                  >
-                    <View style={styles.submiticon1}>
-                      <Feather name="edit" size={20} color="white"/>
-                    </View>
+                  }}>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={()=> handleRemove(item.id)}>
                     <View style={styles.submiticon2}>

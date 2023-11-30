@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Platform, Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -41,20 +41,46 @@ export default function NewRegistrationPage() {
   const [medname, setmedname] = useState("");
   const [tipo, setTipo] = useState("");
   const [intervalo, setIntervalo] = useState<number>(0);
+  const [notificationId, setNotificationId] = useState<string | null>(null); // Adicionado state para armazenar o ID da notificação
+
+  useEffect(() => {
+    // Este efeito será executado ao montar o componente
+    return () => {
+      // Este bloco de código será executado ao desmontar o componente
+      if (notificationId) {
+        // Cancela a notificação quando o componente é desmontado
+        cancelNotification(notificationId);
+      }
+    };
+  }, [notificationId]); // Dependência para o efeito
 
   async function scheduleNotificarion() {
     try {
-      const delayInMinutes = intervalo ; // Agende a notificação para 1 minuto no futuro
+      const delayInSeconds = intervalo * 60;
+      const id = uuid();
+      const delayInMinutes = intervalo * 60 ; // Agende a notificação para 1 minuto no futuro
   
-      await Notifications.scheduleNotificationAsync({
+      const notification = await Notifications.scheduleNotificationAsync({
         content: {
           title: 'Med Remind 💊',
           body: `Não esqueça de tomar a sua medicação ${medname}!`,
         },
         trigger: { seconds: delayInMinutes * 60, repeats: false }, // Use seconds para o atraso
       });
+      setNotificationId(id);
     } catch (error) {
       console.error('Erro ao agendar notificação:', error);
+    }
+  }
+
+  async function cancelNotification(notificationId: string | null) {
+    try {
+      if (notificationId) {
+        await Notifications.cancelScheduledNotificationAsync(notificationId);
+        setNotificationId(null);
+      }
+    } catch (error) {
+      console.error('Erro ao cancelar notificação:', error);
     }
   }
   
@@ -189,14 +215,14 @@ export default function NewRegistrationPage() {
                 placeholder={{ label: 'Selecione o intervalo', value: null, }}
                 onValueChange={setIntervalo}
                 items={[
-                  { label: '1 minutos', value: 1 },
-                  { label: '2 horas', value: 2 * 60 },
-                  { label: '4 horas', value: 4 * 60 },
-                  { label: '6 horas', value: 6 * 60 },
-                  { label: '8 horas', value: 8 * 60 },
-                  { label: '10 horas', value: 10 * 60 },
-                  { label: '12 horas', value: 12 * 60 },
-                  { label: '24 horas', value: 24 * 60 },
+                  { label: '1 minuto', value: 1 },
+                  { label: '2 horas', value: 2 },
+                  { label: '4 horas', value: 4 },
+                  { label: '6 horas', value: 6 },
+                  { label: '8 horas', value: 8 },
+                  { label: '10 horas', value: 10 },
+                  { label: '12 horas', value: 12 },
+                  { label: '24 horas', value: 24 },
                 ]}
               />
             </View>
