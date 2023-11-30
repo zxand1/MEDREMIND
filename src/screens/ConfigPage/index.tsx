@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import { Text, View, ImageBackground, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, ImageBackground, TouchableOpacity, ScrollView, Linking  } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -58,7 +58,15 @@ export default function ConfigPage() {
               <View style={styles.submitBtn}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate("HelpSupportPage")}
+                onPress={() => {
+                  const email = 'suporte@medremind.com.br';
+                  const subject = 'Ajuda / Suporte';
+                  const body = 'Olá, estou precisando de ajuda com o aplicativo.';
+
+                  const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                  Linking.openURL(mailtoUrl);
+                }}
               >
                 <View style={styles.submiticon}>
                   <FontAwesome name="question-circle" size={24} color="black" />
