@@ -13,6 +13,18 @@ import Toast from "react-native-toast-message";
 import * as Notifications from 'expo-notifications';
 import { useNavigation } from "@react-navigation/native";
 
+type CardProps = {
+  id: string;
+  medname:string,
+  tipo:string,
+  hora:string,
+  intervalo: number,
+}
+type Props={
+  data: CardProps;
+  onPress:()=> void;
+}
+
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldPlaySound: true,
@@ -28,7 +40,24 @@ export default function NewRegistrationPage() {
   const [time, setSelectedTime] = useState(new Date());
   const [medname, setmedname] = useState("");
   const [tipo, setTipo] = useState("");
-  const [intervalo, setIntervalo] = useState("");
+  const [intervalo, setIntervalo] = useState<number>(0);
+
+  async function scheduleNotificarion() {
+    try {
+      const delayInMinutes = intervalo ; // Agende a notificação para 1 minuto no futuro
+  
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: 'Med Remind 💊',
+          body: `Não esqueça de tomar a sua medicação ${medname}!`,
+        },
+        trigger: { seconds: delayInMinutes * 60, repeats: false }, // Use seconds para o atraso
+      });
+    } catch (error) {
+      console.error('Erro ao agendar notificação:', error);
+    }
+  }
+  
 
   const { getItem, setItem } = useAsyncStorage("@medremind:medname");
   const navigation = useNavigation();
@@ -51,13 +80,12 @@ export default function NewRegistrationPage() {
 
     try {
       const id = uuid();
-      const newData = {
+      const newData: CardProps = {
         id,
         medname,
-        intervalo,
         tipo,
-        date,
-        time,
+        hora: `${formatSelectedDate()} ${time.toLocaleTimeString()}`,
+        intervalo,
       }
 
       const response = await getItem();
@@ -74,9 +102,10 @@ export default function NewRegistrationPage() {
 
       setTipo("");
       setmedname("");
-      setIntervalo("");
+      setIntervalo(0);
       setSelectedDate(new Date());
       setSelectedTime(new Date());
+
     } catch (error) {
       console.log(error);
       Toast.show({
@@ -113,7 +142,7 @@ export default function NewRegistrationPage() {
       source={require('../../../assets/images/wallpaper.png')}
       style={styles.imageBackground}
     >
-      <StatusBar style="light" />
+      <StatusBar style="light" translucent/>
       <SafeAreaView style={styles.container}>
         <View style={styles.logoTitle}>
           <Animatable.Image
@@ -160,14 +189,14 @@ export default function NewRegistrationPage() {
                 placeholder={{ label: 'Selecione o intervalo', value: null, }}
                 onValueChange={setIntervalo}
                 items={[
-                  { label: '1 minutos', value: 1 * 60 },
-                  { label: '2 horas', value: 2 * 3600 },
-                  { label: '4 horas', value: 4 * 3600 },
-                  { label: '6 horas', value: 6 * 3600 },
-                  { label: '8 horas', value: 8 * 3600 },
-                  { label: '10 horas', value: 10 * 3600 },
-                  { label: '12 horas', value: 12 * 3600 },
-                  { label: '24 horas', value: 24 * 3600 },
+                  { label: '1 minutos', value: 1 },
+                  { label: '2 horas', value: 2 * 60 },
+                  { label: '4 horas', value: 4 * 60 },
+                  { label: '6 horas', value: 6 * 60 },
+                  { label: '8 horas', value: 8 * 60 },
+                  { label: '10 horas', value: 10 * 60 },
+                  { label: '12 horas', value: 12 * 60 },
+                  { label: '24 horas', value: 24 * 60 },
                 ]}
               />
             </View>
@@ -209,6 +238,7 @@ export default function NewRegistrationPage() {
                 style={styles.button}
                 onPress={() => {
                   handleNew();
+                  scheduleNotificarion();
                   navigation.navigate("Tabnavigation");
                 }
                 }
