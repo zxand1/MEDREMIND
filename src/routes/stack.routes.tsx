@@ -10,6 +10,7 @@ import Symptoms from "../screens/SymptomsPage";
 import RegisterSymptoms from "../screens/RegisterSymptomsPage";
 import EditMedicationPage from "../screens/EditMedicationPage";
 import React from "react";
+import HelpSupportPage from "../screens/HelpSupportPage";
 
 const Stack = createNativeStackNavigator();
 export default function StackRoutes() {
@@ -29,6 +30,7 @@ export default function StackRoutes() {
       <Stack.Screen name="RegisterSymptoms" component={RegisterSymptoms} />
       <Stack.Screen name="Symptoms" component={Symptoms} />
       <Stack.Screen name="EditMedicationPage" component={EditMedicationPage} />
+      <Stack.Screen name="HelpSupportPage" component={HelpSupportPage} />
     </Stack.Navigator>
   );
 }
