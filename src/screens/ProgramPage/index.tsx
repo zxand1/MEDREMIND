@@ -10,7 +10,6 @@ import styles from './styles';
 import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Toast from 'react-native-toast-message';
 import uuid from 'react-uuid';
-import RegisterSymptoms from '../RegisterSymptomsPage';
 
 type CardProps = {
   id: string;
@@ -52,7 +51,7 @@ export default function ProgramPage() {
       // Salvar no histórico
       await setItem(JSON.stringify(historyData));
 
-      console.log(historyData);
+      
 
       Toast.show({
         type: 'success',
@@ -68,11 +67,6 @@ export default function ProgramPage() {
     }
   }
 
-  async function cancelNotification(notificationId: string) {
-    // Aqui você pode adicionar lógica para cancelar a notificação
-    // Certifique-se de utilizar a biblioteca ou API que você está usando para notificações
-    console.log(`Cancelando notificação com ID: ${notificationId}`);
-  }
 
   async function handleFetchData() {
     const response = await AsyncStorage.getItem('@medremind:medname');
@@ -125,7 +119,6 @@ export default function ProgramPage() {
                     onPress={() =>{
                       navigation.navigate('Tabnavigation'); 
                       handleNew(item);
-                      cancelNotification(item.notificationId);
                       }
                     }>
                       <View style={styles.submiticon2}>

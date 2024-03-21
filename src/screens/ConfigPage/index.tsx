@@ -8,7 +8,7 @@ import * as Animatable from "react-native-animatable";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import styles from "./styles";
-import Registrosintomas from "../SymptomsPage";
+
 
 export default function ConfigPage() {
   const navigation = useNavigation();

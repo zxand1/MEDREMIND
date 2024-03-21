@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "flex-start",
         paddingHorizontal: 12,
-        paddingVertical: 60,
+        paddingVertical: 30,
     },
     imageBackground: {
         flex: 1,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
       },
       submitBtn2: {
         borderRadius: 18,
-        marginTop: "95%",  
+        marginTop: "20%",  
     },
 });
 

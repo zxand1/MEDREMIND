@@ -20,29 +20,30 @@ type CardProps = {
 export default function Symptoms() {
   const navigation = useNavigation();
 
-  const [data, setData] = useState<CardProps[]>([]);
-  const { getItem, setItem } = useAsyncStorage("@medremind:registro");
-
-  async function handleFetchData() {
-    const response = await getItem();
-
-    setData(response ? JSON.parse(response) : []);
-  }
-
-  async function handleRemove(id: string) {
-    const response = await getItem();
-    const previousData = response ? JSON.parse(response) : [];
-    const newData = previousData.filter((item: CardProps) => item.id !== id);
-
-    setItem(JSON.stringify(data));
-    setData(newData);
-  }
-
-  useFocusEffect(
-    useCallback(() => {
-      handleFetchData();
-    }, [])
-  );
+    const [data, setData] = useState<CardProps[]>([]);
+    const { getItem, setItem } = useAsyncStorage("@medremind:registro");
+  
+    async function handleFetchData() {
+      const response = await getItem();
+      setData(response ? JSON.parse(response) : []);
+    }
+  
+    async function handleRemove(id: string) {
+      const response = await getItem();
+      const previoushistoryData = response ? JSON.parse(response) : [];
+      const newhistoryData = previoushistoryData.filter(
+        (item: CardProps) => item.id !== id
+      );
+  
+      setItem(JSON.stringify(newhistoryData));
+      setData(newhistoryData);
+    }
+  
+    useFocusEffect(
+      useCallback(() => {
+        handleFetchData();
+      }, [])
+    );
 
   return (
     <ImageBackground
@@ -68,7 +69,7 @@ export default function Symptoms() {
 
           <FlatList
             data={data}
-            style={{ marginTop: 5 }}
+            style={{ marginTop: 5, width:"100%" }}
             contentContainerStyle={{ marginHorizontal: 20 }}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => {

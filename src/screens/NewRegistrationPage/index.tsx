@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, ImageBackground, TouchableOpacity, TextInput, ScrollView, Platform, Alert } from 'react-native';
+import {
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+  Platform,
+  Alert,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -9,26 +18,27 @@ import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/dat
 import styles from './styles';
 import uuid from 'react-uuid';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
-import Toast from "react-native-toast-message";
+import Toast from 'react-native-toast-message';
 import * as Notifications from 'expo-notifications';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from '@react-navigation/native';
 
 type CardProps = {
   id: string;
-  medname:string,
-  tipo:string,
-  hora:string,
-  intervalo: number,
-}
-type Props={
+  medname: string;
+  tipo: string;
+  hora: string;
+  intervalo: number;
+};
+
+type Props = {
   data: CardProps;
-  onPress:()=> void;
-}
+  onPress: () => void;
+};
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldPlaySound: true,
-    shouldSetBadge: true,
+    shouldSetBadge: false,
     shouldShowAlert: true,
   }),
 });
@@ -38,70 +48,27 @@ export default function NewRegistrationPage() {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [date, setSelectedDate] = useState(new Date());
   const [time, setSelectedTime] = useState(new Date());
-  const [medname, setmedname] = useState("");
-  const [tipo, setTipo] = useState("");
+  const [medname, setmedname] = useState('');
+  const [tipo, setTipo] = useState('');
   const [intervalo, setIntervalo] = useState<number>(0);
-  const [notificationId, setNotificationId] = useState<string | null>(null); // Adicionado state para armazenar o ID da notificação
 
-  useEffect(() => {
-    // Este efeito será executado ao montar o componente
-    return () => {
-      // Este bloco de código será executado ao desmontar o componente
-      if (notificationId) {
-        // Cancela a notificação quando o componente é desmontado
-        cancelNotification(notificationId);
-      }
-    };
-  }, [notificationId]); // Dependência para o efeito
-
-  async function scheduleNotificarion() {
-    try {
-      const delayInSeconds = intervalo * 60;
-      const id = uuid();
-      const delayInMinutes = intervalo * 60 ; // Agende a notificação para 1 minuto no futuro
-  
-      const notification = await Notifications.scheduleNotificationAsync({
-        content: {
-          title: 'Med Remind 💊',
-          body: `Não esqueça de tomar a sua medicação ${medname}!`,
-        },
-        trigger: { seconds: delayInMinutes * 60, repeats: false }, // Use seconds para o atraso
-      });
-      setNotificationId(id);
-    } catch (error) {
-      console.error('Erro ao agendar notificação:', error);
-    }
-  }
-
-  async function cancelNotification(notificationId: string | null) {
-    try {
-      if (notificationId) {
-        await Notifications.cancelScheduledNotificationAsync(notificationId);
-        setNotificationId(null);
-      }
-    } catch (error) {
-      console.error('Erro ao cancelar notificação:', error);
-    }
-  }
-  
-
-  const { getItem, setItem } = useAsyncStorage("@medremind:medname");
+  const { getItem, setItem } = useAsyncStorage('@medremind:medname');
   const navigation = useNavigation();
 
   async function handleNew() {
     if (!tipo) {
-      Alert.alert('Calma aí!', "Tipo de Medicamento não Preenchido");
-      return
+      Alert.alert('Calma aí!', 'Tipo de Medicamento não Preenchido');
+      return;
     }
 
     if (!medname) {
-      Alert.alert('Calma aí!', "Nome do Medicamento não Preenchido");
-      return
+      Alert.alert('Calma aí!', 'Nome do Medicamento não Preenchido');
+      return;
     }
 
     if (!intervalo) {
-      Alert.alert('Calma aí!', "Intervalo não Preenchido");
-      return
+      Alert.alert('Calma aí!', 'Intervalo não Preenchido');
+      return;
     }
 
     try {
@@ -112,7 +79,7 @@ export default function NewRegistrationPage() {
         tipo,
         hora: `${formatSelectedDate()} ${time.toLocaleTimeString()}`,
         intervalo,
-      }
+      };
 
       const response = await getItem();
       const previousData = response ? JSON.parse(response) : [];
@@ -122,22 +89,51 @@ export default function NewRegistrationPage() {
       await setItem(JSON.stringify(data));
 
       Toast.show({
-        type: "success",
-        text1: "Cadastrado com sucesso!",
-      })
+        type: 'success',
+        text1: 'Cadastrado com sucesso!',
+      });
 
-      setTipo("");
-      setmedname("");
+      setTipo('');
+      setmedname('');
       setIntervalo(0);
       setSelectedDate(new Date());
       setSelectedTime(new Date());
-
     } catch (error) {
       console.log(error);
       Toast.show({
-        type: "error",
-        text1: "não foi possível cadastrar."
-      })
+        type: 'error',
+        text1: 'Não foi possível cadastrar.',
+      });
+    }
+  }
+
+  useEffect(() => {
+    // Solicitar permissões de notificação ao montar o componente
+    const getNotificationPermissions = async () => {
+      const { granted } = await Notifications.requestPermissionsAsync();
+      if (!granted) {
+        console.log('Permissão de notificação não concedida.');
+        // Lide com o caso em que as permissões não foram concedidas.
+      }
+    };
+
+    getNotificationPermissions();
+  }, []);
+
+  async function scheduleNotification() {
+    console.log(scheduleNotification);
+    try {
+      const delayInMinutes = intervalo;
+
+      const notification = await Notifications.scheduleNotificationAsync({
+        content: {
+          title: 'Med Remind 💊',
+          body: `Não esqueça de tomar a sua medicação ${medname}!`,
+        },
+        trigger: { seconds: delayInMinutes * 60, repeats: false },
+      });
+    } catch (error) {
+      console.error('Erro ao agendar notificação:', error);
     }
   }
 
@@ -155,7 +151,6 @@ export default function NewRegistrationPage() {
     setShowTimePicker(false);
   };
 
-
   const formatSelectedDate = () => {
     const day = date.getDate();
     const month = date.getMonth() + 1;
@@ -168,7 +163,7 @@ export default function NewRegistrationPage() {
       source={require('../../../assets/images/wallpaper.png')}
       style={styles.imageBackground}
     >
-      <StatusBar style="light" translucent/>
+      <StatusBar style="light" translucent />
       <SafeAreaView style={styles.container}>
         <View style={styles.logoTitle}>
           <Animatable.Image
@@ -202,8 +197,7 @@ export default function NewRegistrationPage() {
             </View>
             <Text style={styles.text}>Nome do medicamento:</Text>
             <TextInput
-              style={[
-                styles.formInput]}
+              style={[styles.formInput]}
               value={medname}
               onChangeText={setmedname}
               placeholder="Digite o nome do medicamento"
@@ -212,7 +206,7 @@ export default function NewRegistrationPage() {
             <View style={styles.select}>
               <RNPickerSelect
                 value={intervalo}
-                placeholder={{ label: 'Selecione o intervalo', value: null, }}
+                placeholder={{ label: 'Selecione o intervalo', value: null }}
                 onValueChange={setIntervalo}
                 items={[
                   { label: '1 minuto', value: 1 },
@@ -232,7 +226,7 @@ export default function NewRegistrationPage() {
               style={styles.datePickerButton}
             >
               <Text>{formatSelectedDate()}</Text>
-            </TouchableOpacity >
+            </TouchableOpacity>
             {showDatePicker && (
               <DateTimePicker
                 value={date}
@@ -264,10 +258,9 @@ export default function NewRegistrationPage() {
                 style={styles.button}
                 onPress={() => {
                   handleNew();
-                  scheduleNotificarion();
-                  navigation.navigate("Tabnavigation");
-                }
-                }
+                  scheduleNotification();
+                  navigation.navigate('Tabnavigation');
+                }}
               >
                 <LinearGradient
                   colors={['#110e9d', '#2e84c1']}
